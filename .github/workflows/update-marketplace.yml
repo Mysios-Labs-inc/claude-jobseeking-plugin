@@ -56,13 +56,15 @@ jobs:
             # Update the description to mention AI features
             sed -i 's/AI-powered job application assistant with profile-driven automation/AI-powered job application assistant with intelligent profile analysis and market insights/' README.md
 
-            # Add AI intelligence features using printf to avoid YAML conflicts
-            AI_FEATURES=$(printf '%s\n%s' \
-              "$(printf '%s' '- 🧠 **AI Profile Intelligence** - Smart skills gap analysis and career insights')" \
-              "$(printf '%s' '- 📊 **Market Analysis** - Real-time demand assessment and salary benchmarking')")
+            # Add AI intelligence features by writing them to temp file first
+            cat > temp_features.txt << 'EOF'
+- 🧠 **AI Profile Intelligence** - Smart skills gap analysis and career insights
+- 📊 **Market Analysis** - Real-time demand assessment and salary benchmarking
+EOF
 
             # Insert AI features after existing features
-            sed -i "/- 🎯 Profile-driven automation eliminates data re-entry/a\\${AI_FEATURES}" README.md
+            sed -i "/- 🎯 Profile-driven automation eliminates data re-entry/r temp_features.txt" README.md
+            rm temp_features.txt
           fi
 
           # Verify the update
