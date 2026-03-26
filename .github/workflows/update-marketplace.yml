@@ -51,48 +51,20 @@ jobs:
           # Update README.md version
           sed -i "s/### 🚀 Jobseeking Plugin v[0-9]\+\.[0-9]\+\.[0-9]\+/### 🚀 Jobseeking Plugin ${{ steps.version.outputs.version }}/" README.md
 
-          # Update features for v1.2+ versions with AI intelligence
+          # For v1.2+ versions, add AI intelligence note
           if [[ "${{ steps.version.outputs.version }}" =~ v1\.[2-9] ]]; then
-            # Create enhanced features content for v1.2.0+
-            cat > /tmp/features.txt << 'EOL'
-**Features:**
-- 🧠 **AI-Powered Profile Intelligence** - Smart skills gap analysis and career insights
-- 🔍 **Smart Document Upload** - Intelligent file detection with 85%+ accuracy
-- 📊 **Enhanced Skills Analysis** - Real-time market demand assessment
-- 📝 **Achievement Enhancement** - AI-suggested quantification and metrics
-- 📄 **Instant Resume Generation** - Job-specific optimization and ATS compatibility
-- 📁 **Professional Workspace** - 65+ organized directories with iCloud sync
-- 🔐 **Encrypted Profile Storage** - Secure local data with completeness scoring
-- 🎯 **Profile-Driven Automation** - Eliminates repetitive data re-entry
-EOL
-            # Replace features section
-            sed -i '/\*\*Features:\*\*/,/^\*\*Installation:\*\*/{ /^\*\*Installation:\*\*/!d; }' README.md
-            sed -i '/### 🚀 Jobseeking Plugin/r /tmp/features.txt' README.md
+            # Update the description to mention AI features
+            sed -i 's/AI-powered job application assistant with profile-driven automation/AI-powered job application assistant with intelligent profile analysis and market insights/' README.md
 
-          elif [[ "${{ steps.version.outputs.version }}" =~ v1\.[1-9] ]]; then
-            # Enhanced features for v1.1.x
-            cat > /tmp/features.txt << 'EOL'
-**Features:**
-- 🔍 **Smart Document Upload** - Intelligent file detection with 85%+ accuracy
-- 📊 **Enhanced PDF Parsing** - Confidence scoring and quality assessment
-- 📤 **Multi-Format Support** - PDF, Word, JSON, CSV, and text formats
-- ✨ **Quality Validation** - Real-time extraction confidence and data validation
-- 📄 **Instant Resume Generation** - Job-specific optimization and ATS compatibility
-- 📁 **Professional Workspace** - 65+ organized directories with iCloud sync
-- 🔐 **Encrypted Profile Storage** - Secure local data with completeness scoring
-- 🎯 **Profile-Driven Automation** - Eliminates repetitive data re-entry
-EOL
-            # Replace features section
-            sed -i '/\*\*Features:\*\*/,/^\*\*Installation:\*\*/{ /^\*\*Installation:\*\*/!d; }' README.md
-            sed -i '/### 🚀 Jobseeking Plugin/r /tmp/features.txt' README.md
+            # Add AI intelligence feature after existing features
+            sed -i '/- 🎯 Profile-driven automation eliminates data re-entry/a\
+- 🧠 **AI Profile Intelligence** - Smart skills gap analysis and career insights\
+- 📊 **Market Analysis** - Real-time demand assessment and salary benchmarking' README.md
           fi
-
-          # Clean up temp file
-          rm -f /tmp/features.txt
 
           # Verify the update
           echo "Updated README.md version section:"
-          grep -A 12 "Jobseeking Plugin" README.md
+          grep -A 15 "Jobseeking Plugin" README.md
 
       - name: 📤 Commit and Push Marketplace Update
         run: |
