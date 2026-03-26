@@ -10,16 +10,33 @@ jobs:
     name: Update Claude Marketplace
     runs-on: ubuntu-latest
 
+    # Add timeout to prevent hanging workflows
+    timeout-minutes: 10
+
     steps:
       - name: 🛒 Checkout Plugin Repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Full history for better version detection
 
-      - name: 📝 Extract Version from Tag
-        id: version
+      - name: 📝 Extract Version and Plugin Info
+        id: plugin-info
         run: |
+          # Extract version from tag
           VERSION=${GITHUB_REF#refs/tags/}
           echo "version=$VERSION" >> $GITHUB_OUTPUT
           echo "Released version: $VERSION"
+
+          # Extract plugin name from repository
+          PLUGIN_NAME=$(basename $(git config --get remote.origin.url) .git)
+          echo "plugin_name=$PLUGIN_NAME" >> $GITHUB_OUTPUT
+          echo "Plugin name: $PLUGIN_NAME"
+
+          # Extract plugin description from package.json if exists
+          if [ -f "package.json" ]; then
+            DESCRIPTION=$(jq -r '.description // "AI-powered job application assistant"' package.json)
+            echo "description=$DESCRIPTION" >> $GITHUB_OUTPUT
+          fi
 
       - name: 🎪 Checkout Marketplace Repository
         uses: actions/checkout@v4
@@ -27,80 +44,228 @@ jobs:
           repository: Mysios-Labs-inc/claude-plugins-marketplace
           token: ${{ secrets.MARKETPLACE_TOKEN }}
           path: marketplace
+          fetch-depth: 0  # Full history for merge conflict resolution
 
-      - name: 🔄 Update marketplace.json
+      - name: 🔄 Sync and Update Marketplace
+        working-directory: marketplace
         run: |
-          cd marketplace
+          set -e  # Exit on any error
 
-          # Install jq for JSON manipulation
-          sudo apt-get update && sudo apt-get install -y jq
-
-          # Update the version and ref in marketplace.json
-          jq --arg version "${{ steps.version.outputs.version }}" \
-             '.plugins[] |= if .name == "jobseeking-plugin" then .version = $version | .source.ref = $version else . end' \
-             .claude-plugin/marketplace.json > tmp.json && mv tmp.json .claude-plugin/marketplace.json
-
-          # Verify the update
-          echo "Updated marketplace.json:"
-          cat .claude-plugin/marketplace.json
-
-      - name: 📝 Update README.md
-        run: |
-          cd marketplace
-
-          # Update README.md version
-          sed -i "s/### 🚀 Jobseeking Plugin v[0-9]\+\.[0-9]\+\.[0-9]\+/### 🚀 Jobseeking Plugin ${{ steps.version.outputs.version }}/" README.md
-
-          # For v1.2+ versions, add AI intelligence note
-          if [[ "${{ steps.version.outputs.version }}" =~ v1\.[2-9] ]]; then
-            # Update the description to mention AI features
-            sed -i 's/AI-powered job application assistant with profile-driven automation/AI-powered job application assistant with intelligent profile analysis and market insights/' README.md
-
-            # Add AI intelligence features by writing them to temp file first
-            echo "- 🧠 **AI Profile Intelligence** - Smart skills gap analysis and career insights" > temp_features.txt
-            echo "- 📊 **Market Analysis** - Real-time demand assessment and salary benchmarking" >> temp_features.txt
-
-            # Insert AI features after existing features
-            sed -i "/- 🎯 Profile-driven automation eliminates data re-entry/r temp_features.txt" README.md
-            rm temp_features.txt
-          fi
-
-          # Verify the update
-          echo "Updated README.md version section:"
-          grep -A 15 "Jobseeking Plugin" README.md
-
-      - name: 📤 Commit and Push Marketplace Update
-        run: |
-          cd marketplace
-
-          # Configure git
+          # Configure git with bot identity
           git config user.name "Marketplace Bot"
           git config user.email "bot@mysioslabs.com"
 
-          # Check if there are changes to either file
+          # Pull latest changes to avoid conflicts
+          echo "📥 Fetching latest marketplace changes..."
+          git fetch origin main
+          git reset --hard origin/main
+
+          # Install jq for JSON manipulation
+          sudo apt-get update -qq && sudo apt-get install -y jq
+
+          # Backup original file
+          cp .claude-plugin/marketplace.json .claude-plugin/marketplace.json.backup
+
+          echo "🔄 Updating marketplace.json..."
+
+          # Update plugin version, ref, and description in marketplace.json
+          jq --arg version "${{ steps.plugin-info.outputs.version }}" \
+             --arg plugin "${{ steps.plugin-info.outputs.plugin_name }}" \
+             --arg description "${{ steps.plugin-info.outputs.description }}" \
+             '
+             # Update marketplace metadata version
+             .metadata.version = $version |
+             # Update plugin entry
+             .plugins |= map(
+               if .name == $plugin then
+                 .version = $version |
+                 .source.ref = $version |
+                 .description = $description
+               else . end
+             )' \
+             .claude-plugin/marketplace.json > tmp.json
+
+          # Validate JSON syntax
+          if ! jq empty tmp.json 2>/dev/null; then
+            echo "❌ Invalid JSON generated. Restoring backup."
+            mv .claude-plugin/marketplace.json.backup .claude-plugin/marketplace.json
+            exit 1
+          fi
+
+          mv tmp.json .claude-plugin/marketplace.json
+          rm .claude-plugin/marketplace.json.backup
+
+          echo "✅ Marketplace JSON updated successfully"
+          echo "📄 Updated content:"
+          jq '.plugins[] | select(.name == "${{ steps.plugin-info.outputs.plugin_name }}")' .claude-plugin/marketplace.json
+
+      - name: 📝 Update README.md
+        working-directory: marketplace
+        run: |
+          set -e  # Exit on any error
+
+          VERSION="${{ steps.plugin-info.outputs.version }}"
+          PLUGIN_NAME="${{ steps.plugin-info.outputs.plugin_name }}"
+
+          echo "📝 Updating README.md for version $VERSION..."
+
+          # Update version in README
+          sed -i "s/### 🚀 Jobseeking Plugin v[0-9]\+\.[0-9]\+\.[0-9]\+/### 🚀 Jobseeking Plugin $VERSION/" README.md
+
+          # For v1.2+ versions, enhance with AI intelligence features
+          if [[ "$VERSION" =~ v1\.[2-9] ]] || [[ "$VERSION" =~ v[2-9] ]]; then
+            echo "🧠 Adding AI intelligence features for version $VERSION..."
+
+            # Update main description
+            sed -i 's/AI-powered job application assistant with profile-driven automation/AI-powered job application assistant with intelligent profile analysis and market insights/' README.md
+
+            # Create AI features content
+            cat > ai_features.txt << 'EOF'
+- 🧠 **AI Profile Intelligence** - Smart skills gap analysis and career insights
+- 📊 **Market Analysis** - Real-time demand assessment and salary benchmarking
+EOF
+
+            # Insert AI features if not already present
+            if ! grep -q "AI Profile Intelligence" README.md; then
+              sed -i "/- 🎯 Profile-driven automation eliminates data re-entry/r ai_features.txt" README.md
+            fi
+
+            rm -f ai_features.txt
+          fi
+
+          echo "✅ README.md updated successfully"
+
+      - name: 🔍 Validation and Conflict Check
+        working-directory: marketplace
+        run: |
+          set -e
+
+          echo "🔍 Running pre-commit validation..."
+
+          # Check JSON validity
+          echo "Validating JSON syntax..."
+          if ! jq empty .claude-plugin/marketplace.json; then
+            echo "❌ Invalid JSON in marketplace.json"
+            exit 1
+          fi
+
+          # Check if our plugin exists in marketplace
+          PLUGIN_EXISTS=$(jq '.plugins[] | select(.name == "${{ steps.plugin-info.outputs.plugin_name }}") | .name' .claude-plugin/marketplace.json)
+          if [ -z "$PLUGIN_EXISTS" ]; then
+            echo "❌ Plugin ${{ steps.plugin-info.outputs.plugin_name }} not found in marketplace"
+            exit 1
+          fi
+
+          echo "✅ Validation passed"
+
+      - name: 📤 Commit and Push with Conflict Resolution
+        working-directory: marketplace
+        run: |
+          set -e
+
+          # Check if there are any changes
           if git diff --quiet .claude-plugin/marketplace.json README.md; then
-            echo "No changes to marketplace files"
+            echo "ℹ️ No changes detected. Marketplace already up to date."
             exit 0
           fi
 
-          # Commit and push changes
+          echo "📤 Committing marketplace updates..."
+
+          # Add files to staging
           git add .claude-plugin/marketplace.json README.md
-          git commit -m "🚀 Auto-update: jobseeking-plugin ${{ steps.version.outputs.version }}
 
-          ✨ Updated Files:
-          - marketplace.json: Version bumped to ${{ steps.version.outputs.version }}
-          - README.md: Updated version and enhanced feature descriptions
-          - Source ref updated to latest release tag
-          - Users will receive update notification in Claude Code
+          # Create commit
+          git commit -m "🚀 Auto-update: ${{ steps.plugin-info.outputs.plugin_name }} ${{ steps.plugin-info.outputs.version }}
 
-          🔗 Release: https://github.com/Mysios-Labs-inc/claude-jobseeking-plugin/releases/tag/${{ steps.version.outputs.version }}
+          ✨ Updated Components:
+          - marketplace.json: Version bumped to ${{ steps.plugin-info.outputs.version }}
+          - README.md: Enhanced with latest feature descriptions
+          - Plugin reference: Updated to latest release tag
+          - Marketplace metadata: Synchronized with plugin version
 
-          🤖 Auto-generated by marketplace-update workflow"
+          🔗 Plugin Release: https://github.com/${{ github.repository }}/releases/tag/${{ steps.plugin-info.outputs.version }}
+          🎯 Users will receive update notifications in Claude Code
 
-          git push origin main
+          🤖 Auto-generated by marketplace-update workflow
+          📅 Timestamp: $(date -u '+%Y-%m-%d %H:%M:%S UTC')"
 
-      - name: ✅ Notification
+          # Attempt to push with retry logic
+          max_retries=3
+          retry_count=0
+
+          while [ $retry_count -lt $max_retries ]; do
+            if git push origin main; then
+              echo "✅ Successfully pushed to marketplace repository"
+              break
+            else
+              retry_count=$((retry_count + 1))
+              echo "⚠️ Push failed (attempt $retry_count/$max_retries). Retrying..."
+
+              if [ $retry_count -lt $max_retries ]; then
+                echo "🔄 Fetching latest changes and rebasing..."
+                git fetch origin main
+                git rebase origin/main
+              else
+                echo "❌ Failed to push after $max_retries attempts"
+                exit 1
+              fi
+            fi
+            sleep 2
+          done
+
+      - name: 🏷️ Create Marketplace Release
+        working-directory: marketplace
         run: |
-          echo "🎉 Successfully updated marketplace!"
-          echo "Users can now update to jobseeking-plugin ${{ steps.version.outputs.version }}"
-          echo "Marketplace: https://github.com/Mysios-Labs-inc/claude-plugins-marketplace"
+          set -e
+
+          VERSION="${{ steps.plugin-info.outputs.version }}"
+
+          echo "🏷️ Creating marketplace release $VERSION..."
+
+          # Create release tag
+          git tag "$VERSION" -m "🧠 Claude Plugins Marketplace $VERSION
+
+          🎯 Featured Plugin: ${{ steps.plugin-info.outputs.plugin_name }} $VERSION
+          - Enhanced with latest AI intelligence features
+          - Real-time market analysis and skills gap assessment
+          - Professional job search automation platform
+
+          🚀 Marketplace Features:
+          - Automated plugin distribution via Claude Code
+          - Production-ready AI-enhanced productivity tools
+          - Secure and reliable plugin ecosystem
+
+          💼 Ready for production deployment in Claude Code marketplace"
+
+          # Push the release tag
+          git push origin "$VERSION"
+
+          echo "✅ Marketplace release $VERSION created successfully"
+
+      - name: ✅ Success Notification
+        if: success()
+        run: |
+          echo "🎉 Marketplace update completed successfully!"
+          echo "📦 Plugin: ${{ steps.plugin-info.outputs.plugin_name }}"
+          echo "🏷️ Version: ${{ steps.plugin-info.outputs.version }}"
+          echo "🔗 Marketplace: https://github.com/Mysios-Labs-inc/claude-plugins-marketplace"
+          echo "📄 Release: https://github.com/Mysios-Labs-inc/claude-plugins-marketplace/releases/tag/${{ steps.plugin-info.outputs.version }}"
+          echo ""
+          echo "🎯 Users can now update to the latest version in Claude Code!"
+
+      - name: ❌ Failure Cleanup
+        if: failure()
+        working-directory: marketplace
+        run: |
+          echo "❌ Workflow failed. Performing cleanup..."
+
+          # Reset any uncommitted changes
+          git reset --hard HEAD
+          git clean -fd
+
+          # Remove any tags that might have been created locally
+          VERSION="${{ steps.plugin-info.outputs.version }}"
+          git tag -d "$VERSION" 2>/dev/null || true
+
+          echo "🧹 Cleanup completed"
+          echo "📧 Please check the workflow logs for details about the failure"
