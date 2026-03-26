@@ -1,7 +1,7 @@
 {
   "name": "jobseeking-plugin",
   "version": "1.0.0",
-  "description": "AI-powered job search assistant with resume optimization, cover letter generation, interview prep, and career coaching",
+  "description": "Intelligent Job Application Assistant - One-time profile setup creates personalized resumes instantly. Includes organized workspace with 65+ folders for job search management.",
   "author": {
     "name": "JobSeeking.ai Team",
     "email": "hello@jobseeking.ai"

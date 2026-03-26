@@ -1,0 +1,242 @@
+{
+  "personal": {
+    "name": "Alex Johnson",
+    "email": "alex.johnson@email.com",
+    "phone": "+1-555-123-4567",
+    "location": "Austin, TX",
+    "linkedin": "https://linkedin.com/in/alexjohnson",
+    "portfolio": "https://alexjohnson.dev",
+    "github": "https://github.com/alexjohnson",
+    "remote": true,
+    "relocate": false,
+    "visa": "US Citizen",
+    "availability": "2 weeks notice"
+  },
+  "professional": {
+    "title": "Senior Full-Stack Developer",
+    "summary": "Experienced full-stack developer with 8+ years building scalable web applications. Specialized in React, Node.js, and AWS cloud architecture. Led teams of 5-8 engineers and delivered products serving 100K+ users. Passionate about clean code, user experience, and mentoring junior developers.",
+    "yearsExperience": 8,
+    "level": "senior",
+    "industries": ["Technology", "Healthcare", "Fintech"],
+    "specializations": ["React", "Node.js", "AWS", "TypeScript", "PostgreSQL"],
+    "careerGoals": "Transition to technical leadership role (Engineering Manager or Staff Engineer) within 2 years",
+    "workStyle": "collaborative",
+    "managementExperience": 2
+  },
+  "experience": [
+    {
+      "company": "HealthTech Solutions",
+      "title": "Senior Software Engineer",
+      "startDate": "2021-03",
+      "endDate": "present",
+      "location": "Austin, TX (Remote)",
+      "type": "full-time",
+      "description": "Lead full-stack development for patient portal platform serving 50K+ users",
+      "achievements": [
+        "Improved application performance by 40% through React optimization and caching",
+        "Led team of 5 developers in rebuilding legacy system with modern tech stack",
+        "Implemented CI/CD pipeline reducing deployment time from 2 hours to 15 minutes",
+        "Mentored 3 junior developers, with 2 receiving promotions"
+      ],
+      "skills": ["React", "Node.js", "PostgreSQL", "AWS", "TypeScript", "Docker"],
+      "teamSize": 5,
+      "budget": 0,
+      "promoted": true
+    },
+    {
+      "company": "StartupCorp",
+      "title": "Software Engineer",
+      "startDate": "2018-06",
+      "endDate": "2021-02",
+      "location": "San Francisco, CA",
+      "type": "full-time",
+      "description": "Full-stack developer for B2B SaaS platform",
+      "achievements": [
+        "Built customer dashboard handling 1M+ data points with React and D3.js",
+        "Architected microservices backend reducing API response time by 60%",
+        "Implemented automated testing increasing code coverage from 40% to 85%"
+      ],
+      "skills": ["JavaScript", "Python", "React", "Django", "PostgreSQL", "Redis"],
+      "teamSize": 0,
+      "budget": 0,
+      "promoted": true
+    },
+    {
+      "company": "Digital Agency",
+      "title": "Junior Developer",
+      "startDate": "2016-01",
+      "endDate": "2018-05",
+      "location": "Austin, TX",
+      "type": "full-time",
+      "description": "Frontend developer for client websites and web applications",
+      "achievements": [
+        "Delivered 20+ responsive websites with 98% client satisfaction",
+        "Learned React and Redux, becoming team's go-to frontend expert",
+        "Improved development workflow with Webpack and build optimization"
+      ],
+      "skills": ["HTML", "CSS", "JavaScript", "React", "PHP", "WordPress"],
+      "teamSize": 0,
+      "budget": 0,
+      "promoted": false
+    }
+  ],
+  "skills": [
+    {
+      "name": "React",
+      "category": "technical",
+      "level": "expert",
+      "yearsUsed": 6,
+      "lastUsed": "2024-03",
+      "certified": false,
+      "interest": 9
+    },
+    {
+      "name": "Node.js",
+      "category": "technical",
+      "level": "advanced",
+      "yearsUsed": 5,
+      "lastUsed": "2024-03",
+      "certified": false,
+      "interest": 8
+    },
+    {
+      "name": "TypeScript",
+      "category": "technical",
+      "level": "advanced",
+      "yearsUsed": 4,
+      "lastUsed": "2024-03",
+      "certified": false,
+      "interest": 9
+    },
+    {
+      "name": "AWS",
+      "category": "technical",
+      "level": "intermediate",
+      "yearsUsed": 3,
+      "lastUsed": "2024-03",
+      "certified": true,
+      "interest": 7
+    },
+    {
+      "name": "PostgreSQL",
+      "category": "technical",
+      "level": "advanced",
+      "yearsUsed": 5,
+      "lastUsed": "2024-03",
+      "certified": false,
+      "interest": 6
+    },
+    {
+      "name": "Team Leadership",
+      "category": "soft",
+      "level": "intermediate",
+      "yearsUsed": 2,
+      "lastUsed": "2024-03",
+      "certified": false,
+      "interest": 8
+    },
+    {
+      "name": "Mentoring",
+      "category": "soft",
+      "level": "advanced",
+      "yearsUsed": 3,
+      "lastUsed": "2024-03",
+      "certified": false,
+      "interest": 9
+    }
+  ],
+  "education": [
+    {
+      "type": "degree",
+      "name": "Bachelor of Science in Computer Science",
+      "institution": "University of Texas at Austin",
+      "field": "Computer Science",
+      "year": 2016,
+      "gpa": 3.7,
+      "honors": "Magna Cum Laude",
+      "relevant": true,
+      "credentialId": "",
+      "expirationDate": "",
+      "url": ""
+    },
+    {
+      "type": "certification",
+      "name": "AWS Certified Developer - Associate",
+      "institution": "Amazon Web Services",
+      "field": "Cloud Computing",
+      "year": 2022,
+      "gpa": 0,
+      "honors": "",
+      "relevant": true,
+      "credentialId": "AWS-CDA-2022-123456",
+      "expirationDate": "2025-03",
+      "url": "https://aws.amazon.com/verification"
+    }
+  ],
+  "preferences": {
+    "targetRoles": [
+      "Senior Software Engineer",
+      "Staff Software Engineer",
+      "Engineering Manager",
+      "Technical Lead"
+    ],
+    "salaryRange": {
+      "min": 140000,
+      "max": 180000,
+      "currency": "USD"
+    },
+    "locations": ["Austin, TX", "Remote", "San Francisco, CA"],
+    "remote": "hybrid",
+    "companySize": ["startup", "mid-size", "large"],
+    "industries": ["Technology", "Healthcare", "Fintech", "E-commerce"],
+    "companyStage": ["growth", "established"],
+    "benefits": [
+      "equity",
+      "flexible-schedule",
+      "health-insurance",
+      "professional-development",
+      "parental-leave"
+    ],
+    "dealBreakers": [
+      "no-remote-options",
+      "below-market-salary",
+      "toxic-culture",
+      "excessive-overtime"
+    ],
+    "workSchedule": "flexible",
+    "travelRequirement": "minimal",
+    "priorityOrder": [
+      "salary",
+      "company-culture",
+      "growth-opportunity",
+      "work-life-balance",
+      "technology-stack"
+    ]
+  },
+  "settings": {
+    "coverLetterStyle": "professional",
+    "resumeFormat": "modern",
+    "followUpCadence": "weekly",
+    "applicationTracking": true,
+    "autoRespond": false,
+    "privacyLevel": "limited",
+    "notificationPrefs": {
+      "newJobs": true,
+      "applications": true,
+      "interviews": true,
+      "salary": false
+    },
+    "customFields": {
+      "portfolioHighlights": ["React Dashboard", "Node.js API", "AWS Architecture"],
+      "interviewAvailability": "weekday-afternoons"
+    }
+  },
+  "metadata": {
+    "created": "2024-03-26T20:00:00Z",
+    "lastUpdated": "2024-03-26T20:00:00Z",
+    "version": "1.0",
+    "completeness": 95,
+    "lastBackup": "2024-03-26T20:00:00Z",
+    "source": "manual-entry"
+  }
+}

@@ -127,3 +127,27 @@ junit.xml
 build/
 dist/
 out/
+
+# Plugin package files
+*.zip
+claude-jobseeking-plugin-*.zip
+
+# User profile data (sensitive)
+profile_data.json
+user_profiles/
+workspaces/
+.claude-jobseeking/
+
+# Package script outputs
+package-plugin.sh
+
+# Sensitive or user-specific data
+secrets/
+user_data/
+personal_profiles/
+
+# Development files
+*.draft
+*.backup
+testing/
+sandbox/

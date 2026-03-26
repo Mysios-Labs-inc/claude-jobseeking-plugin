@@ -62,6 +62,111 @@ app.post('/api/resume/optimize', async (req, res) => {
     }
 });
 
+// HTML Resume Generation
+app.post('/api/resume/generate-html', async (req, res) => {
+    try {
+        if (!API_KEY) {
+            return res.status(401).json({
+                error: 'Premium feature requires API key. Get yours at jobseeking.ai'
+            });
+        }
+
+        const { resumeData, template, styling } = req.body;
+
+        const response = await axios.post(`${API_ENDPOINT}/v1/resume/generate-html`, {
+            resumeData,
+            template: template || 'modern',
+            styling: styling || 'professional'
+        }, {
+            headers: {
+                'Authorization': `Bearer ${API_KEY}`,
+                'Content-Type': 'application/json'
+            }
+        });
+
+        res.json(response.data);
+    } catch (error) {
+        console.error('HTML generation error:', error.message);
+        res.status(500).json({
+            error: 'HTML resume generation failed',
+            message: error.message
+        });
+    }
+});
+
+// PDF Conversion from HTML
+app.post('/api/resume/convert-pdf', async (req, res) => {
+    try {
+        if (!API_KEY) {
+            return res.status(401).json({
+                error: 'Premium feature requires API key. Get yours at jobseeking.ai'
+            });
+        }
+
+        const { htmlContent, options } = req.body;
+
+        const response = await axios.post(`${API_ENDPOINT}/v1/resume/convert-pdf`, {
+            htmlContent,
+            options: {
+                format: options?.format || 'Letter',
+                margin: options?.margin || '0.5in',
+                printBackground: true,
+                displayHeaderFooter: false,
+                ...options
+            }
+        }, {
+            headers: {
+                'Authorization': `Bearer ${API_KEY}`,
+                'Content-Type': 'application/json'
+            },
+            responseType: 'arraybuffer'
+        });
+
+        // Set PDF headers
+        res.setHeader('Content-Type', 'application/pdf');
+        res.setHeader('Content-Disposition', 'attachment; filename=resume.pdf');
+        res.send(response.data);
+    } catch (error) {
+        console.error('PDF conversion error:', error.message);
+        res.status(500).json({
+            error: 'PDF conversion failed',
+            message: error.message
+        });
+    }
+});
+
+// Multi-format Resume Export
+app.post('/api/resume/export', async (req, res) => {
+    try {
+        if (!API_KEY) {
+            return res.status(401).json({
+                error: 'Premium feature requires API key. Get yours at jobseeking.ai'
+            });
+        }
+
+        const { resumeData, formats, template } = req.body;
+
+        const response = await axios.post(`${API_ENDPOINT}/v1/resume/export`, {
+            resumeData,
+            formats: formats || ['html', 'pdf', 'docx'],
+            template: template || 'modern'
+        }, {
+            headers: {
+                'Authorization': `Bearer ${API_KEY}`,
+                'Content-Type': 'application/json'
+            }
+        });
+
+        res.json(response.data);
+    } catch (error) {
+        console.error('Multi-format export error:', error.message);
+        res.status(500).json({
+            error: 'Resume export failed',
+            message: error.message
+        });
+    }
+});
+
 app.post('/api/cover-letter/generate', async (req, res) => {
     try {
         if (!API_KEY) {
