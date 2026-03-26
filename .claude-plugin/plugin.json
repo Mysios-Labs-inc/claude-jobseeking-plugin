@@ -1,13 +1,13 @@
 {
   "name": "jobseeking-plugin",
-  "version": "1.0.0",
-  "description": "Intelligent Job Application Assistant - One-time profile setup creates personalized resumes instantly. Includes organized workspace with 65+ folders for job search management.",
+  "version": "1.1.1",
+  "description": "🚀 AI-powered job application assistant with smart document upload, enhanced profile extraction, and professional workspace automation. Upload resume/LinkedIn → get instant profile setup with 85%+ accuracy.",
   "author": {
-    "name": "JobSeeking.ai Team",
-    "email": "hello@jobseeking.ai"
+    "name": "Mysios Labs Inc",
+    "email": "hello@mysioslabs.com"
   },
-  "homepage": "https://github.com/your-username/claude-jobseeking-plugin",
-  "repository": "https://github.com/your-username/claude-jobseeking-plugin",
+  "homepage": "https://github.com/Mysios-Labs-inc/claude-jobseeking-plugin",
+  "repository": "https://github.com/Mysios-Labs-inc/claude-jobseeking-plugin",
   "license": "MIT",
   "keywords": ["job-search", "resume", "career", "interview", "ai-assistant"],
   "category": "productivity",

@@ -1,6 +1,6 @@
 {
   "name": "claude-jobseeking-plugin",
-  "version": "1.0.0",
+  "version": "1.1.1",
   "description": "AI-powered job search assistant plugin for Claude Code",
   "main": "servers/premium-server.js",
   "scripts": {

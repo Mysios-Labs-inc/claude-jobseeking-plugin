@@ -104,29 +104,54 @@ When this skill is invoked, follow this step-by-step process:
 ### Step 1: Welcome and Overview
 Greet the user and explain you'll set up their job seeker profile and organized workspace. This takes 10-15 minutes and eliminates future data re-entry.
 
-### Step 2: Optional Document Upload (NEW)
-Ask the user if they have existing professional documents to speed up the process:
+### Step 2: Smart Document Upload (v1.1.1 ENHANCED)
+Offer intelligent file detection and upload assistance to dramatically speed up profile creation:
 
-**Resume Upload**: "Do you have a current resume (PDF) I can analyze to extract your experience and skills?"
-- If yes: Ask them to provide the file path to their resume
-- Use the Bash tool to run the document parser:
+**Phase 1: Smart File Detection**
+- Use file upload assistant to automatically find relevant files:
   ```bash
   cd skills/profile-setup/scripts
-  python document_parser.py resume "/path/to/resume.pdf"
+  python file_upload_assistant.py suggest
   ```
-- Capture the JSON output and use it to pre-populate profile fields
-- Validate extracted data with user and fill in missing details
+- Present top 5 file suggestions with confidence scores and reasons
+- Ask user: "I found these professional documents on your computer. Would you like me to analyze any of them?"
 
-**LinkedIn Profile**: "Do you have your LinkedIn profile exported or can you share your LinkedIn URL?"
-- For LinkedIn export: Ask for the path to their LinkedIn data export
-- Use the Bash tool to parse:
+**Phase 2: Enhanced Document Processing**
+
+**Resume Upload (Enhanced)**:
+- If user selects resume or provides path, validate first:
   ```bash
-  python document_parser.py linkedin "/path/to/linkedin_data.json"
+  python file_upload_assistant.py validate "/path/to/resume.pdf" resume
   ```
-- For URL: Use Read tool to extract publicly available information
-- Extract professional summary, experience, education, skills
+- Use enhanced parser with confidence scoring:
+  ```bash
+  python enhanced_document_parser.py resume "/path/to/resume.pdf"
+  ```
+- Display extraction report with confidence percentage and data quality assessment
+- Show what was found: "✅ Found: Name, email, phone, 3 jobs, 2 degrees, 15 skills (85% confidence)"
 
-**Auto-Population**: Use extracted data to pre-fill the profile structure, then confirm/edit with user rather than starting from scratch. Mark extracted fields for validation.
+**LinkedIn Profile Upload (Enhanced)**:
+- Support multiple LinkedIn data formats (JSON export, CSV, text)
+- Validate file before processing:
+  ```bash
+  python file_upload_assistant.py validate "/path/to/linkedin.json" linkedin
+  ```
+- Enhanced extraction with metadata:
+  ```bash
+  python enhanced_document_parser.py linkedin "/path/to/linkedin.json"
+  ```
+- Show comprehensive extraction report
+
+**Phase 3: Intelligent Validation & Enhancement**
+- Present extracted data in organized sections with confidence indicators
+- Highlight fields needing validation: "⚠️ Please confirm: Current job title"
+- Allow inline editing: "Would you like to update or add anything to [section]?"
+- Show completion percentage: "Profile is 78% complete. Missing: target salary, preferred locations"
+
+**Phase 4: Quality Assurance**
+- Generate data quality report showing extraction confidence
+- Identify any inconsistencies or missing critical information
+- Offer suggestions: "I noticed you have React experience but it's not in your skills list. Should I add it?"
 
 ### Step 3: Confirm/Collect Personal Information
 If documents were uploaded, confirm and fill gaps. Otherwise, collect:

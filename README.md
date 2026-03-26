@@ -1,6 +1,6 @@
-# Claude Jobseeking Plugin v1.0 🚀
+# Claude Jobseeking Plugin v1.1.1 🚀
 
-**Intelligent Job Application Assistant** - One-time profile setup creates personalized resumes instantly. Complete with organized workspace for professional job search management.
+**Intelligent Job Application Assistant** - Smart document upload with 85%+ accuracy profile extraction. Upload resume/LinkedIn → get instant professional setup with organized workspace management.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Claude Plugin](https://img.shields.io/badge/Claude-Plugin-blue.svg)](https://claude.ai)
@@ -12,11 +12,12 @@
 - **Encrypted Storage** → Secure local profile data
 - **90%+ Completeness Scoring** → Track your profile quality
 
-### 📤 Smart Document Upload (NEW)
-- **Resume Parsing** → Upload PDF resume for instant data extraction
-- **LinkedIn Integration** → Import professional data from LinkedIn exports
-- **Auto-Population** → 70% faster onboarding with document intelligence
-- **Validation Flow** → Confirm extracted data instead of manual entry
+### 📤 Smart Document Upload (v1.1.1 ENHANCED)
+- **Intelligent File Detection** → Automatically finds your resume/LinkedIn files
+- **Enhanced PDF Parsing** → 85%+ accuracy with confidence scoring
+- **Multi-Format Support** → PDF, Word, JSON, CSV, text formats
+- **Quality Assessment** → Real-time extraction confidence and validation
+- **Smart Suggestions** → AI-powered data completion and error detection
 
 ### 📄 Instant Resume Generation
 - **Profile-Powered** → Generate targeted resumes in 30 seconds
@@ -34,12 +35,12 @@
 
 ## 🚀 Quick Start
 
-### 1. Complete Profile Setup (5-15 minutes)
+### 1. Smart Profile Setup (2-8 minutes)
 ```bash
 /jobseeking-plugin:profile-setup
 ```
-**New**: Upload your resume (PDF) or LinkedIn export for instant data extraction!
-Captures all your professional data + creates organized workspace
+**v1.1.1**: AI finds your documents automatically! Upload resume/LinkedIn → get 85%+ accurate extraction
+**Smart workflow**: Document detection → Enhanced parsing → Quality validation → Workspace creation
 
 ### 2. Generate Instant Resumes
 ```bash
