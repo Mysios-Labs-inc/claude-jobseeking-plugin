@@ -1,0 +1,20 @@
+{
+  "name": "jobseeking-plugin",
+  "version": "1.0.0",
+  "description": "AI-powered job search assistant with resume optimization, cover letter generation, interview prep, and career coaching",
+  "author": {
+    "name": "JobSeeking.ai Team",
+    "email": "hello@jobseeking.ai"
+  },
+  "homepage": "https://github.com/your-username/claude-jobseeking-plugin",
+  "repository": "https://github.com/your-username/claude-jobseeking-plugin",
+  "license": "MIT",
+  "keywords": ["job-search", "resume", "career", "interview", "ai-assistant"],
+  "category": "productivity",
+  "userConfig": {
+    "api_key": {
+      "description": "Premium API key for advanced features (get yours at jobseeking.ai)",
+      "sensitive": true
+    }
+  }
+}
