@@ -1,6 +1,6 @@
-# Profile Data Schema Reference
+# Profile Data Schema Reference v1.2.0
 
-Complete schema definition for user profile data structure used by all jobseeking skills.
+Complete schema definition for user profile data structure used by all jobseeking skills, including AI intelligence enhancements in v1.2.0.
 
 ## Schema Overview
 
@@ -13,7 +13,9 @@ Complete schema definition for user profile data structure used by all jobseekin
   "education": [ /* Education and certifications array */ ],
   "preferences": { /* Job search criteria */ },
   "settings": { /* Application preferences */ },
-  "metadata": { /* System information */ }
+  "metadata": { /* System information */ },
+  "ai_intelligence": { /* AI-powered profile enhancements (v1.2.0) */ },
+  "intelligence_metadata": { /* AI analysis metadata (v1.2.0) */ }
 }
 ```
 
@@ -262,12 +264,260 @@ if profile:
     # Use data to generate personalized resume
 ```
 
+## AI Intelligence Extensions (v1.2.0)
+
+### AI Intelligence Root Object
+
+```json
+{
+  "ai_intelligence": {
+    "skills_gap_analysis": { /* Skills gap analysis results */ },
+    "enhanced_achievements": { /* AI-enhanced achievement descriptions */ },
+    "industry_optimization": { /* Industry-specific profile optimization */ },
+    "ats_compatibility": { /* ATS compatibility scoring and recommendations */ },
+    "github_integration": { /* GitHub profile analysis (optional) */ },
+    "market_analysis": { /* Market intelligence and positioning */ }
+  }
+}
+```
+
+### Skills Gap Analysis
+
+```json
+{
+  "skills_gap_analysis": {
+    "analysis_type": "job_specific|market_general",
+    "skills_score": "number (0-100) - Overall skills competitiveness",
+    "match_percentage": "number (0-100) - Job requirements match",
+    "market_readiness": "excellent|strong|good|developing|needs_improvement",
+    "gaps_identified": [
+      {
+        "skill": "string - Skill name",
+        "gap_type": "critical_missing|nice_to_have|skill_level",
+        "job_frequency": "number (0-100) - Market demand percentage",
+        "priority": "high|medium|low",
+        "recommendation": "string - Learning recommendation",
+        "learning_resources": ["string - URLs to learning materials"]
+      }
+    ],
+    "strong_skills": ["string - User's strongest market-relevant skills"],
+    "analysis_timestamp": "string - ISO date of analysis"
+  }
+}
+```
+
+### Enhanced Achievements
+
+```json
+{
+  "enhanced_achievements": {
+    "enhanced_count": "number - Number of achievements enhanced",
+    "unquantified_count": "number - Achievements needing quantification",
+    "overall_achievement_score": "number (0-100) - Achievement quality score",
+    "suggestions": [
+      {
+        "original": "string - Original achievement text",
+        "enhanced": "string - AI-enhanced version with metrics",
+        "metrics_added": ["percentage|absolute|timeframe|scale"],
+        "confidence": "number (0-1) - AI confidence in enhancement",
+        "achievement_type": "performance|leadership|technical|business"
+      }
+    ]
+  }
+}
+```
+
+### Industry Optimization
+
+```json
+{
+  "industry_optimization": {
+    "target_industry": "string - Primary target industry",
+    "keyword_optimization_score": "number (0-100)",
+    "industry_alignment": "excellent|strong|good|weak",
+    "recommended_keywords": ["string - Industry-specific keywords"],
+    "competitive_keywords": {
+      "high_impact": ["string - Critical industry keywords"],
+      "emerging": ["string - Trending keywords"]
+    },
+    "industry_trends": {
+      "growing_skills": ["string - Skills in high demand"],
+      "declining_skills": ["string - Skills losing relevance"]
+    }
+  }
+}
+```
+
+### ATS Compatibility
+
+```json
+{
+  "ats_compatibility": {
+    "compatibility_score": "number (0-100) - Overall ATS compatibility",
+    "format_score": "number (0-100) - Resume format compatibility",
+    "keyword_score": "number (0-100) - Keyword optimization score",
+    "structure_score": "number (0-100) - Section structure score",
+    "issues_found": [
+      {
+        "issue_type": "formatting|keywords|structure|content",
+        "severity": "critical|warning|suggestion",
+        "description": "string - Issue description",
+        "recommendation": "string - How to fix"
+      }
+    ],
+    "ats_optimization_suggestions": [
+      {
+        "category": "string - Optimization category",
+        "priority": "high|medium|low",
+        "action": "string - Specific action to take",
+        "expected_improvement": "number - Expected score improvement"
+      }
+    ]
+  }
+}
+```
+
+### GitHub Integration
+
+```json
+{
+  "github_integration": {
+    "username": "string - GitHub username",
+    "profile_analyzed": "boolean - Whether profile was analyzed",
+    "contribution_score": "number (0-10) - Overall contribution quality",
+    "activity_level": "high|medium|low - Contribution frequency",
+    "repositories_analyzed": "number - Number of repos analyzed",
+    "top_languages": ["string - Most used programming languages"],
+    "projects_found": [
+      {
+        "name": "string - Repository name",
+        "description": "string - Project description",
+        "languages": ["string - Programming languages used"],
+        "stars": "number - GitHub stars",
+        "contribution_level": "primary_author|major_contributor|contributor",
+        "project_type": "web_app|library|tool|data_science|mobile",
+        "estimated_impact": "high|medium|low"
+      }
+    ],
+    "skills_extracted": ["string - Skills inferred from code"],
+    "professional_indicators": {
+      "consistent_activity": "boolean - Regular contribution pattern",
+      "collaborative_projects": "number - Projects with multiple contributors",
+      "documentation_quality": "high|medium|low - README and docs quality"
+    }
+  }
+}
+```
+
+### Market Analysis
+
+```json
+{
+  "market_analysis": {
+    "salary_benchmark": {
+      "market_median": "number - Market median salary",
+      "user_target": "number - User's target salary",
+      "competitiveness": "above_market|at_market|below_market",
+      "salary_range_analysis": {
+        "percentile_25": "number",
+        "percentile_75": "number",
+        "user_target_percentile": "number"
+      }
+    },
+    "skills_demand": {
+      "high_demand": ["string - Skills in high market demand"],
+      "emerging": ["string - Emerging skills with growth potential"],
+      "declining": ["string - Skills losing market relevance"]
+    },
+    "career_progression": {
+      "current_level": "string - Current career level",
+      "next_level": "string - Next logical career step",
+      "timeline_estimate": "string - Estimated timeline for advancement",
+      "recommended_actions": ["string - Actions to advance career"],
+      "skill_gaps_for_advancement": ["string - Skills needed for next level"]
+    },
+    "market_positioning": {
+      "competitive_strength": "high|medium|low - Market competitiveness",
+      "unique_value_props": ["string - Differentiating factors"],
+      "areas_for_differentiation": ["string - Opportunities to stand out"]
+    }
+  }
+}
+```
+
+### Intelligence Metadata
+
+```json
+{
+  "intelligence_metadata": {
+    "last_analysis": "string - ISO date of last AI analysis",
+    "analysis_version": "string - AI intelligence version (1.2.0)",
+    "features_enabled": ["skills_gap|achievements|industry_opt|ats|github|market"],
+    "confidence_scores": {
+      "skills_analysis": "number (0-1) - Confidence in skills analysis",
+      "achievement_enhancement": "number (0-1) - Confidence in achievements",
+      "market_analysis": "number (0-1) - Confidence in market data",
+      "overall_intelligence": "number (0-1) - Overall analysis confidence"
+    },
+    "next_analysis_due": "string - ISO date when next analysis recommended",
+    "data_sources": ["string - Sources used for analysis"]
+  }
+}
+```
+
+## Enhanced Completeness Scoring (v1.2.0)
+
+### Base Profile Completeness (100%)
+- **Personal Info (15%)**: Contact details and location
+- **Professional (20%)**: Career summary and specializations
+- **Experience (25%)**: Work history with achievements
+- **Skills (15%)**: Skills matrix and competencies
+- **Education (10%)**: Educational background
+- **Preferences (15%)**: Job search criteria and targets
+
+### AI Intelligence Completeness (30% bonus)
+- **Skills Gap Analysis (10%)**: Market-driven skills assessment
+- **Enhanced Achievements (8%)**: Quantified accomplishments
+- **Industry Optimization (7%)**: Industry-specific optimization
+- **ATS Compatibility (5%)**: Resume optimization for ATS systems
+- **Market Analysis (5%)**: Salary and career progression insights
+- **GitHub Integration (3%)**: Technical portfolio analysis (optional)
+
+**Maximum Score**: 130% (100% base + 30% AI intelligence)
+**Excellence Threshold**: 120%+
+
 ## Migration & Versioning
 
 Schema changes require version bumps and migration scripts:
 
-- **v1.0**: Initial schema
-- **v1.1**: Added skills.interest field
-- **v1.2**: Added preferences.priorityOrder array
+- **v1.0**: Initial schema with core profile structure
+- **v1.1**: Added skills.interest field and enhanced preferences
+- **v1.2**: Added AI intelligence extensions and enhanced completeness scoring
+
+### v1.2.0 Migration Script
+
+```python
+def migrate_profile_to_v1_2_0(profile):
+    """Migrate profile from v1.1.x to v1.2.0 with AI intelligence."""
+
+    # Add AI intelligence structure if missing
+    if 'ai_intelligence' not in profile:
+        profile['ai_intelligence'] = {}
+
+    # Add intelligence metadata
+    if 'intelligence_metadata' not in profile:
+        profile['intelligence_metadata'] = {
+            'last_analysis': None,
+            'analysis_version': '1.2.0',
+            'features_enabled': [],
+            'confidence_scores': {},
+            'next_analysis_due': None
+        }
+
+    # Update schema version
+    profile['metadata']['version'] = '1.2.0'
+
+    return profile
+```
 
 Migration scripts in `scripts/migrations/` handle version updates automatically.
