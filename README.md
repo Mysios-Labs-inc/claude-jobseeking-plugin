@@ -18,7 +18,7 @@
 - **Market Intelligence** → Career progression insights and salary benchmarking
 - **ATS Compatibility** → Real-time resume optimization for 95%+ ATS pass rates
 
-### 📤 Smart Document Upload (v1.1.1 ENHANCED)
+### 📤 Smart Document Upload (ENHANCED)
 - **Intelligent File Detection** → Automatically finds your resume/LinkedIn files
 - **Enhanced PDF Parsing** → 85%+ accuracy with confidence scoring
 - **Multi-Format Support** → PDF, Word, JSON, CSV, text formats
@@ -45,7 +45,7 @@
 ```bash
 /jobseeking-plugin:profile-setup
 ```
-**v1.1.1**: AI finds your documents automatically! Upload resume/LinkedIn → get 85%+ accurate extraction
+**Enhanced Upload**: AI finds your documents automatically! Upload resume/LinkedIn → get 85%+ accurate extraction
 **Smart workflow**: Document detection → Enhanced parsing → Quality validation → Workspace creation
 
 ### 2. Generate Instant Resumes

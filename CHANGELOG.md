@@ -2,6 +2,50 @@
 
 All notable changes to the Claude Jobseeking Plugin will be documented in this file.
 
+## [1.2.0] - 2026-03-26
+
+### 🧠 AI-Powered Profile Intelligence
+
+#### Smart Skills Gap Analysis
+- **Market Demand Assessment**: Real-time analysis of 200+ skills across job markets
+- **Skills Taxonomy System**: Comprehensive skills mapping with synonyms and variations
+- **Gap Identification**: Pinpoints missing skills for target roles with priority ranking
+- **Learning Recommendations**: Curated suggestions for skills development
+- **Confidence Scoring**: Data-driven assessment of career market readiness
+
+#### Enhanced Achievement Analysis
+- **Impact Quantification**: AI-suggested metrics and numbers for accomplishments
+- **Achievement Enhancement**: Transform basic descriptions into compelling narratives
+- **Industry Optimization**: Tailor achievements for specific sectors and roles
+- **Performance Indicators**: Track achievement quality and completeness scores
+
+#### Market Intelligence Integration
+- **Salary Benchmarking**: Real-time market data for competitive positioning
+- **Career Progression Mapping**: AI-powered next-step recommendations
+- **Industry Trends Analysis**: Stay ahead of market demands and opportunities
+- **Competitive Positioning**: Understand your unique value proposition in the market
+
+#### ATS Compatibility System
+- **Resume Optimization**: Real-time scoring for 95%+ ATS compatibility
+- **Keyword Analysis**: Smart keyword suggestions based on job requirements
+- **Format Validation**: Ensure resume structure meets ATS standards
+- **Compatibility Scoring**: Track optimization progress with detailed metrics
+
+#### Technical Architecture
+- **Modular AI System**: Six specialized intelligence modules with central orchestration
+- **Python ML Stack**: NumPy, Pandas, Scikit-learn, NLTK for robust analysis
+- **Node.js Integration**: GitHub API integration for technical profile analysis
+- **Error Handling**: Comprehensive logging and graceful degradation
+- **Migration Support**: Automatic profile upgrades from v1.1.x to v1.2.0
+
+### 🔧 Infrastructure & DevOps
+- **GitHub Actions**: Enhanced automation for tag-based marketplace releases
+- **Workflow Optimization**: Fixed YAML syntax issues for reliable deployment
+- **Version Management**: Comprehensive version consistency across all components
+- **Dependency Updates**: Added AI/ML dependencies with proper version constraints
+
+---
+
 ## [1.1.1] - 2026-03-26
 
 ### 🚀 Major Enhancements

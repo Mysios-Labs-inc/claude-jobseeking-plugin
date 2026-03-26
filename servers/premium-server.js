@@ -15,7 +15,7 @@ const port = process.env.PORT || 3001;
 // Environment variables
 const API_ENDPOINT = process.env.API_ENDPOINT || 'https://api.jobseeking.ai';
 const API_KEY = process.env.API_KEY;
-const PLUGIN_VERSION = process.env.PLUGIN_VERSION || '1.0.0';
+const PLUGIN_VERSION = process.env.PLUGIN_VERSION || '1.2.0';
 
 // Middleware
 app.use(express.json());
