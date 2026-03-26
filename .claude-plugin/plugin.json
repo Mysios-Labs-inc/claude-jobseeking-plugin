@@ -10,9 +10,10 @@
   "repository": "https://github.com/Mysios-Labs-inc/claude-jobseeking-plugin",
   "license": "MIT",
   "keywords": ["job-search", "resume", "career", "interview", "ai-assistant"],
-  "category": "productivity",
   "userConfig": {
     "api_key": {
+      "type": "string",
+      "title": "Premium API Key",
       "description": "Premium API key for advanced features (get yours at jobseeking.ai)",
       "sensitive": true
     }
