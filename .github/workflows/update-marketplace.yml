@@ -57,10 +57,8 @@ jobs:
             sed -i 's/AI-powered job application assistant with profile-driven automation/AI-powered job application assistant with intelligent profile analysis and market insights/' README.md
 
             # Add AI intelligence features by writing them to temp file first
-            cat > temp_features.txt << 'EOF'
-- 🧠 **AI Profile Intelligence** - Smart skills gap analysis and career insights
-- 📊 **Market Analysis** - Real-time demand assessment and salary benchmarking
-EOF
+            echo "- 🧠 **AI Profile Intelligence** - Smart skills gap analysis and career insights" > temp_features.txt
+            echo "- 📊 **Market Analysis** - Real-time demand assessment and salary benchmarking" >> temp_features.txt
 
             # Insert AI features after existing features
             sed -i "/- 🎯 Profile-driven automation eliminates data re-entry/r temp_features.txt" README.md
