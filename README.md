@@ -1,6 +1,6 @@
-# Claude Jobseeking Plugin v1.1.1 🚀
+# Claude Jobseeking Plugin v1.2.0 🧠
 
-**Intelligent Job Application Assistant** - Smart document upload with 85%+ accuracy profile extraction. Upload resume/LinkedIn → get instant professional setup with organized workspace management.
+**AI-Powered Career Intelligence Platform** - Smart document upload with 85%+ accuracy PLUS intelligent profile analysis, skills gap assessment, and real-time market insights. Upload resume/LinkedIn → get AI-enhanced career guidance with organized workspace management.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Claude Plugin](https://img.shields.io/badge/Claude-Plugin-blue.svg)](https://claude.ai)
@@ -11,6 +11,12 @@
 - **One-Time Setup** → Powers all future applications
 - **Encrypted Storage** → Secure local profile data
 - **90%+ Completeness Scoring** → Track your profile quality
+
+### 🧠 AI Profile Intelligence (v1.2.0 NEW)
+- **Smart Skills Gap Analysis** → Real-time market demand assessment for 50+ skills
+- **Achievement Enhancement** → AI-suggested quantification and impact metrics
+- **Market Intelligence** → Career progression insights and salary benchmarking
+- **ATS Compatibility** → Real-time resume optimization for 95%+ ATS pass rates
 
 ### 📤 Smart Document Upload (v1.1.1 ENHANCED)
 - **Intelligent File Detection** → Automatically finds your resume/LinkedIn files

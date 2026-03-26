@@ -1,7 +1,7 @@
 {
   "name": "jobseeking-plugin",
-  "version": "1.1.1",
-  "description": "🚀 AI-powered job application assistant with smart document upload, enhanced profile extraction, and professional workspace automation. Upload resume/LinkedIn → get instant profile setup with 85%+ accuracy.",
+  "version": "1.2.0",
+  "description": "🧠 AI-powered job application assistant with intelligent profile analysis, skills gap assessment, and market intelligence. Enhanced document upload + real-time career insights for competitive job searching.",
   "author": {
     "name": "Mysios Labs Inc",
     "email": "hello@mysioslabs.com"
