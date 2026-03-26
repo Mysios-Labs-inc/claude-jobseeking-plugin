@@ -283,7 +283,7 @@ app.get('/api/usage/stats', async (req, res) => {
 });
 
 // Error handling middleware
-app.use((error, req, res, next) => {
+app.use((error, req, res, _next) => {
     console.error('Server error:', error);
     res.status(500).json({
         error: 'Internal server error',
