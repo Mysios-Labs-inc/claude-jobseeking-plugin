@@ -44,6 +44,32 @@ jobs:
           echo "Updated marketplace.json:"
           cat .claude-plugin/marketplace.json
 
+      - name: 📝 Update README.md
+        run: |
+          cd marketplace
+
+          # Update README.md version and features
+          sed -i "s/### 🚀 Jobseeking Plugin v[0-9]\+\.[0-9]\+\.[0-9]\+/### 🚀 Jobseeking Plugin ${{ steps.version.outputs.version }}/" README.md
+
+          # Enhanced feature list for v1.1+ versions
+          if [[ "${{ steps.version.outputs.version }}" =~ v1\.[1-9] ]]; then
+            # Update features section with enhanced v1.1+ features
+            sed -i '/\*\*Features:\*\*/,/^$/c\
+**Features:**\
+- 🔍 **Smart Document Upload** - Intelligent file detection with 85%+ accuracy\
+- 📊 **Enhanced PDF Parsing** - Confidence scoring and quality assessment\
+- 📤 **Multi-Format Support** - PDF, Word, JSON, CSV, and text formats\
+- ✨ **Quality Validation** - Real-time extraction confidence and data validation\
+- 📄 **Instant Resume Generation** - Job-specific optimization and ATS compatibility\
+- 📁 **Professional Workspace** - 65+ organized directories with iCloud sync\
+- 🔐 **Encrypted Profile Storage** - Secure local data with completeness scoring\
+- 🎯 **Profile-Driven Automation** - Eliminates repetitive data re-entry' README.md
+          fi
+
+          # Verify the update
+          echo "Updated README.md version section:"
+          grep -A 10 "Jobseeking Plugin" README.md
+
       - name: 📤 Commit and Push Marketplace Update
         run: |
           cd marketplace
@@ -52,18 +78,19 @@ jobs:
           git config user.name "Marketplace Bot"
           git config user.email "bot@mysioslabs.com"
 
-          # Check if there are changes
-          if git diff --quiet .claude-plugin/marketplace.json; then
-            echo "No changes to marketplace.json"
+          # Check if there are changes to either file
+          if git diff --quiet .claude-plugin/marketplace.json README.md; then
+            echo "No changes to marketplace files"
             exit 0
           fi
 
           # Commit and push changes
-          git add .claude-plugin/marketplace.json
+          git add .claude-plugin/marketplace.json README.md
           git commit -m "🚀 Auto-update: jobseeking-plugin ${{ steps.version.outputs.version }}
 
-          ✨ Updated Features:
-          - Plugin version bumped to ${{ steps.version.outputs.version }}
+          ✨ Updated Files:
+          - marketplace.json: Version bumped to ${{ steps.version.outputs.version }}
+          - README.md: Updated version and enhanced feature descriptions
           - Source ref updated to latest release tag
           - Users will receive update notification in Claude Code
 
