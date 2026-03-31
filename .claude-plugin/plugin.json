@@ -10,9 +10,6 @@
   "repository": "https://github.com/Mysios-Labs-inc/career-intelligence-plugin",
   "license": "MIT",
   "keywords": ["career-intelligence", "professional-development", "job-search", "resume", "career", "mysios-professional", "ai-assistant"],
-  "integrations": [
-    "strategic-research-intelligence"
-  ],
   "userConfig": {
     "api_key": {
       "type": "string",
