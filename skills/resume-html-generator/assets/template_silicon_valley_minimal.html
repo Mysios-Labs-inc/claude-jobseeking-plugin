@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{NAME}} - {{TITLE}}</title>
+    <style>
+        @page {
+            margin: 0.5in;
+            size: A4;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'SF Pro Display', '-apple-system', 'system-ui', sans-serif;
+            font-size: 11pt;
+            line-height: 1.5;
+            color: #1a1a1a;
+            background-color: #ffffff;
+            max-width: 8.5in;
+            margin: 0 auto;
+            padding: 0.5in;
+            font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+        }
+
+        /* Header - Silicon Valley Minimal */
+        .header {
+            margin-bottom: 32px;
+            padding-bottom: 0;
+        }
+
+        .name {
+            font-size: 32pt;
+            font-weight: 200;
+            margin-bottom: 4px;
+            color: #000000;
+            letter-spacing: -1px;
+            line-height: 1.1;
+        }
+
+        .title {
+            font-size: 16pt;
+            margin-bottom: 16px;
+            color: #6366f1;
+            font-weight: 400;
+            letter-spacing: -0.2px;
+        }
+
+        .contact {
+            font-size: 10pt;
+            color: #6b7280;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 8px;
+            font-weight: 400;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+        }
+
+        .contact a {
+            color: #6366f1;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+        }
+
+        .contact a:hover {
+            border-bottom-color: #6366f1;
+        }
+
+        /* Section Styling - Extreme Minimal */
+        .section {
+            margin-bottom: 28px;
+        }
+
+        .section-title {
+            font-size: 11pt;
+            font-weight: 500;
+            margin-bottom: 16px;
+            color: #000000;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 9pt;
+        }
+
+        /* Experience Layout - Clean Lines */
+        .job {
+            margin-bottom: 20px;
+            padding-bottom: 16px;
+            position: relative;
+        }
+
+        .job:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: #f3f4f6;
+        }
+
+        .job-header {
+            margin-bottom: 8px;
+        }
+
+        .job-title-company {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 2px;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .company {
+            font-weight: 600;
+            color: #000000;
+            font-size: 12pt;
+        }
+
+        .job-title {
+            color: #4b5563;
+            font-weight: 400;
+            font-size: 11pt;
+        }
+
+        .dates-location {
+            font-size: 9pt;
+            color: #9ca3af;
+            text-align: right;
+            font-weight: 400;
+            white-space: nowrap;
+        }
+
+        .bullet {
+            margin-bottom: 6px;
+            text-align: justify;
+            line-height: 1.5;
+            color: #374151;
+            padding-left: 0;
+        }
+
+        .bullet::before {
+            content: none;
+        }
+
+        .metric {
+            color: #059669;
+            font-weight: 600;
+        }
+
+        .tech {
+            color: #6366f1;
+            font-weight: 500;
+        }
+
+        /* Skills - Minimal Chip Style */
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            line-height: 1.6;
+        }
+
+        .skill {
+            background: #f8fafc;
+            color: #475569;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 9pt;
+            font-weight: 400;
+            border: 1px solid #e2e8f0;
+        }
+
+        .skill-primary {
+            background: #6366f1;
+            color: white;
+            border-color: #6366f1;
+            font-weight: 500;
+        }
+
+        .skill-ai {
+            background: #f59e0b;
+            color: white;
+            border-color: #f59e0b;
+            font-weight: 500;
+        }
+
+        /* Projects - Ultra Clean */
+        .project {
+            margin-bottom: 18px;
+            position: relative;
+        }
+
+        .project::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #e5e7eb;
+        }
+
+        .project-header {
+            font-weight: 600;
+            margin-bottom: 4px;
+            font-size: 11pt;
+            color: #000000;
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .project-year {
+            color: #6366f1;
+            font-weight: 400;
+            font-size: 9pt;
+        }
+
+        .project-subtitle {
+            font-size: 10pt;
+            margin-bottom: 6px;
+            color: #6b7280;
+            line-height: 1.3;
+            font-weight: 400;
+        }
+
+        .project-url {
+            color: #6366f1;
+            font-size: 9pt;
+            margin-bottom: 4px;
+            font-family: 'SF Mono', 'Monaco', 'Consolas', monospace;
+        }
+
+        /* Education & Publications - Minimal Grid */
+        .education-grid, .publication-grid {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 16px;
+            align-items: baseline;
+            margin-bottom: 12px;
+            padding: 8px 0;
+        }
+
+        .education-school, .publication-title {
+            font-weight: 500;
+            color: #000000;
+            margin-bottom: 2px;
+            font-size: 11pt;
+        }
+
+        .education-degree {
+            color: #6b7280;
+            font-size: 10pt;
+        }
+
+        .education-dates, .publication-year {
+            color: #9ca3af;
+            font-size: 10pt;
+            font-weight: 400;
+        }
+
+        .publication-details {
+            font-size: 10pt;
+            color: #6366f1;
+            margin-bottom: 4px;
+        }
+
+        .publication-description {
+            font-size: 10pt;
+            color: #6b7280;
+            line-height: 1.4;
+            grid-column: 1 / -1;
+            margin-top: 4px;
+        }
+
+        /* Professional Summary - Highlighted Box */
+        .summary {
+            text-align: justify;
+            line-height: 1.6;
+            font-size: 11pt;
+            padding: 20px;
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            color: #374151;
+            margin-bottom: 8px;
+        }
+
+        /* Page break control */
+        .page-break {
+            page-break-before: always;
+        }
+
+        .no-break {
+            page-break-inside: avoid;
+        }
+
+        @media print {
+            body {
+                font-size: 10pt;
+            }
+            .section {
+                margin-bottom: 24px;
+            }
+            .header {
+                margin-bottom: 28px;
+            }
+            .summary {
+                background: #ffffff;
+                border: 1px solid #d1d5db;
+            }
+            .skill {
+                background: #ffffff;
+                border: 1px solid #9ca3af;
+            }
+            .skill-primary {
+                background: #000000;
+                color: white;
+                border-color: #000000;
+            }
+            .skill-ai {
+                background: #6b7280;
+                color: white;
+                border-color: #6b7280;
+            }
+        }
+
+        @media screen {
+            body {
+                max-width: 900px;
+                margin: 40px auto;
+                background: white;
+            }
+        }
+    </style>
+</head>
+<body>
+    {{CONTENT}}
+</body>
+</html>

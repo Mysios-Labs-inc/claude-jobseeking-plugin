@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oscar Rivas Delgado - Product Engineer & Founder</title>
+    <style>
+        @page {
+            size: Letter;
+            margin: 0.5in 0.4in;
+            margin-top: 0.5in;
+            margin-bottom: 0.5in;
+            margin-left: 0.4in;
+            margin-right: 0.4in;
+            padding: 0;
+            @top-left { content: ""; }
+            @top-center { content: ""; }
+            @top-right { content: ""; }
+            @bottom-left { content: ""; }
+            @bottom-center { content: ""; }
+            @bottom-right { content: ""; }
+        }
+
+        @media print {
+            body {
+                -webkit-print-color-adjust: exact !important;
+                color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
+            .page-container {
+                page-break-inside: avoid;
+            }
+
+            /* Hide any potential print artifacts */
+            nav, header, footer, .no-print {
+                display: none !important;
+            }
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            line-height: 1.2;
+            margin: 0;
+            padding: 0;
+            color: #000;
+            background: #fff;
+            font-size: 9pt;
+            max-width: none;
+        }
+
+        .page-container {
+            width: 100%;
+            max-width: 7.5in;
+            margin: 0 auto;
+            padding: 0;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 16px;
+        }
+
+        .name {
+            font-family: "Times New Roman", Times, serif;
+            font-size: 22pt;
+            font-weight: normal;
+            margin: 0 0 4px 0;
+            color: #000;
+            line-height: 1.1;
+        }
+
+        .title {
+            font-size: 10pt;
+            color: #000;
+            margin: 0 0 10px 0;
+            font-weight: 600;
+        }
+
+        .contact {
+            font-size: 9pt;
+            color: #000;
+            margin: 0;
+            font-weight: normal;
+            line-height: 1.2;
+        }
+
+        .section {
+            margin-bottom: 12px;
+        }
+
+        .section-title {
+            font-family: "Times New Roman", Times, serif;
+            font-size: 10.5pt;
+            font-weight: normal;
+            margin: 0 0 2px 0;
+            color: #000;
+            text-transform: uppercase;
+        }
+
+        .section-rule {
+            border: none;
+            border-top: 1px solid #ccc;
+            margin: 0 0 8px 0;
+            height: 1px;
+        }
+
+        .summary-text {
+            font-size: 9pt;
+            line-height: 1.3;
+            text-align: justify;
+            margin: 0 0 4px 0;
+        }
+
+        .skills-text {
+            font-size: 9pt;
+            line-height: 1.3;
+            margin: 0;
+        }
+
+        .skills-highlight {
+            font-weight: 600;
+        }
+
+        .job {
+            margin-bottom: 10px;
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 1px;
+        }
+
+        .company {
+            font-weight: bold;
+            font-size: 9.5pt;
+            color: #000;
+        }
+
+        .dates {
+            font-size: 8pt;
+            color: #000;
+            font-weight: normal;
+        }
+
+        .job-details {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 3px;
+        }
+
+        .role {
+            font-style: italic;
+            font-size: 8.5pt;
+            color: #666;
+        }
+
+        .location {
+            font-size: 8pt;
+            color: #000;
+            font-weight: normal;
+        }
+
+        .job-bullets {
+            margin: 0;
+            padding-left: 14px;
+        }
+
+        .job-bullets li {
+            margin-bottom: 3px;
+            font-size: 8.5pt;
+            line-height: 1.25;
+            text-align: justify;
+        }
+
+        .metric {
+            font-weight: 600;
+        }
+
+        .tech {
+            font-weight: 500;
+        }
+
+        .project {
+            margin-bottom: 8px;
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 1px;
+        }
+
+        .project-name {
+            font-weight: bold;
+            font-size: 9pt;
+            color: #000;
+        }
+
+        .project-year {
+            font-size: 8pt;
+            color: #000;
+            font-weight: normal;
+        }
+
+        .project-description {
+            font-style: italic;
+            font-size: 8pt;
+            color: #666;
+            margin-bottom: 2px;
+        }
+
+        .project-link {
+            font-size: 8pt;
+            color: #0066cc;
+            margin-bottom: 2px;
+        }
+
+        .project-link a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+
+        .project-summary {
+            font-size: 8pt;
+            line-height: 1.3;
+            text-align: justify;
+            margin: 2px 0 0 0;
+        }
+
+        .publication {
+            margin-bottom: 8px;
+        }
+
+        .publication-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 1px;
+        }
+
+        .publication-title {
+            font-weight: bold;
+            font-size: 9pt;
+            color: #000;
+        }
+
+        .publication-year {
+            font-size: 8pt;
+            color: #000;
+            font-weight: normal;
+        }
+
+        .publication-venue {
+            font-style: italic;
+            font-size: 8pt;
+            color: #666;
+            margin-bottom: 2px;
+        }
+
+        .publication-link {
+            font-size: 7.5pt;
+            color: #0066cc;
+            margin-bottom: 2px;
+        }
+
+        .publication-link a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+
+        .publication-bullets {
+            margin: 0;
+            padding-left: 14px;
+        }
+
+        .publication-bullets li {
+            margin-bottom: 1px;
+            font-size: 8pt;
+            line-height: 1.2;
+        }
+
+        .education-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 2px;
+        }
+
+        .school {
+            font-weight: bold;
+            font-size: 9pt;
+            color: #000;
+        }
+
+        .year {
+            font-size: 8pt;
+            color: #000;
+        }
+
+        .degree {
+            font-style: italic;
+            font-size: 8pt;
+            color: #666;
+            margin-bottom: 4px;
+        }
+
+        .page-break {
+            page-break-before: always;
+            break-before: page;
+        }
+
+        @media print {
+            body {
+                margin: 0;
+                padding: 0;
+            }
+
+            .section {
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+
+            .job {
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+
+            .project {
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+
+            .publication {
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-container">
+        <div class="header">
+            <h1 class="name">Oscar Rivas Delgado</h1>
+            <div class="title">Product Engineer & Founder</div>
+            <p class="contact">+51949767204 | oj.rivasds@gmail.com | linkedin.com/in/mrcord | github.com/mrcord</p>
+        </div>
+
+        <div class="section">
+            <div class="section-title">Professional Summary</div>
+            <hr class="section-rule">
+            <p class="summary-text">Product engineer who thinks like a founder and codes like physics don't apply. I don't just build software—I solve real business problems that move the needle. Built 10+ production systems delivering measurable impact: viral marketplaces, AI medical platforms, industrial compliance systems. Whether running my own consultancy or accelerating company growth, I ship impossibly fast and iterate based on data until it works. Track record speaks for itself: 10x booking growth, 5x lead generation, $65K+ ARR built from scratch. Currently helping AI-first companies scale from prototype to production while working across multiple countries.</p>
+        </div>
+
+        <div class="section">
+            <div class="section-title">Core Skills</div>
+            <hr class="section-rule">
+            <p class="skills-text"><span class="skills-highlight">Python, TypeScript, JavaScript</span>, React, Next.js, FastAPI, Node.js, PostgreSQL, <span class="skills-highlight">Claude Agent SDK, MCP Protocol, AI Agent Orchestration</span>, LLMs, Conversational AI, Docker, Kubernetes, AWS, Microservices Architecture, System Design, Data Pipelines, <span class="skills-highlight">Product Engineering, Growth Engineering</span>, Go-to-market Strategy, A/B Testing, Cohort Analysis, Funnel Optimization, PostHog, Supabase, WhatsApp Cloud API</p>
+        </div>
+
+        <div class="section">
+            <div class="section-title">Work Experience</div>
+            <hr class="section-rule">
+
+            <div class="job">
+                <div class="job-header">
+                    <div class="company">Mysios Labs inc.</div>
+                    <div class="dates">Feb '26 - Present</div>
+                </div>
+                <div class="job-details">
+                    <div class="role">Founder & Technical Leader</div>
+                    <div class="location">Remote</div>
+                </div>
+                <ul class="job-bullets">
+                    <li>Built AI business automation systems for <span class="metric">10+ clients</span> across Healthcare, FinTech, Industrial, and AgroTech sectors using <span class="tech">Claude Agent SDK, MCP Protocol, and Python</span></li>
+                    <li>Provide technical advisory for AI-first startups on production system architecture, helping companies architect scalable AI solutions from proof-of-concept to production deployment</li>
+                    <li>Developed reusable AI automation patterns and frameworks that reduce client implementation time by <span class="metric">60%</span> while maintaining production-grade reliability</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <div class="company">Makers Fellowship</div>
+                    <div class="dates">Jul '25 - Jan '26</div>
+                </div>
+                <div class="job-details">
+                    <div class="role">CTO & Product Engineer</div>
+                    <div class="location">Remote</div>
+                </div>
+                <ul class="job-bullets">
+                    <li>Architected experimentation framework for cohort-based accelerator, optimizing conversion funnel by <span class="metric">35%</span> through data-driven iteration on onboarding flow using <span class="tech">Python and React</span></li>
+                    <li>Built end-to-end product engineering systems with real-time analytics, achieving <span class="metric">85% cohort activation rate and 70% program completion</span> through systematic engagement tracking</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <div class="company">Florece.ai</div>
+                    <div class="dates">Jul '25 - Jan '26</div>
+                </div>
+                <div class="job-details">
+                    <div class="role">Co-Founder & CTO</div>
+                    <div class="location">Remote</div>
+                </div>
+                <ul class="job-bullets">
+                    <li>Built demand aggregation marketplace connecting <span class="metric">500+ consumers</span> with florists, achieving <span class="metric">1.5 viral coefficient</span> through intelligent matching algorithms and automated referral mechanics using <span class="tech">TypeScript and Python</span></li>
+                    <li>Led full-stack product development from 0-to-1, increasing marketplace GMV by <span class="metric">200%</span> through dynamic pricing optimization and rapid A/B testing framework</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <div class="company">Domus AI (StartUp Peru 11G)</div>
+                    <div class="dates">Jul '24 - Aug '25</div>
+                </div>
+                <div class="job-details">
+                    <div class="role">Founding Engineer & Tech Lead</div>
+                    <div class="location">Lima, Peru</div>
+                </div>
+                <ul class="job-bullets">
+                    <li>Built PropTech platform from scratch serving <span class="metric">40+ property clients</span> with concurrent incident management, visitor systems, and resident communication, generating <span class="metric">$65K+ ARR</span> using <span class="tech">Python, FastAPI, and PostgreSQL</span></li>
+                    <li>Architected viral visitor management system where each guest interaction generates <span class="metric">3+ user touchpoints</span>, achieving <span class="metric">1.5 viral coefficient and 85% user activation rate</span> through intelligent routing</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <div class="company">Torre</div>
+                    <div class="dates">May '23 - Jan '24</div>
+                </div>
+                <div class="job-details">
+                    <div class="role">Associate Growth Engineer B2B</div>
+                    <div class="location">Remote</div>
+                </div>
+                <ul class="job-bullets">
+                    <li>Built scalable A/B testing framework processing <span class="metric">100K+ daily experiments</span> across B2B outreach, delivering <span class="metric">10x booking increase and 30% open rate improvement</span> through ML-powered personalization using <span class="tech">Python and TypeScript</span></li>
+                    <li>Designed data pipeline with intelligent matching engine generating personalized content for <span class="metric">100K+ daily sends</span>, enabling <span class="metric">20+ concurrent growth experiments</span> with statistical significance tracking</li>
+                </ul>
+            </div>
+
+            <div class="page-break"></div>
+
+            <div class="job">
+                <div class="job-header">
+                    <div class="company">Torre</div>
+                    <div class="dates">Jul '22 - May '23</div>
+                </div>
+                <div class="job-details">
+                    <div class="role">Associate Growth Engineer B2C</div>
+                    <div class="location">Remote</div>
+                </div>
+                <ul class="job-bullets">
+                    <li>Built automated lead scoring system on serverless architecture, achieving <span class="metric">5x lead volume increase and 60% customer acquisition cost reduction</span> through AI-powered qualification using <span class="tech">Python and AWS Lambda</span></li>
+                    <li>Architected behavioral analytics system identifying churn signals, improving <span class="metric">90-day retention by 40%</span> through targeted interventions and automated re-engagement campaigns</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">Projects & Platforms</div>
+            <hr class="section-rule">
+
+            <div class="project">
+                <div class="project-header">
+                    <div class="project-name">social-media-manager Claude Plugin</div>
+                    <div class="project-year">2026</div>
+                </div>
+                <div class="project-summary">Cross-platform automation system managing Instagram, X, LinkedIn, TikTok, and Substack with <span class="metric">10+ specialized AI skills</span> using <span class="tech">Claude Agent SDK and MCP Protocol</span> for <span class="metric">24/7 autonomous operations</span>.</div>
+            </div>
+
+            <div class="project">
+                <div class="project-header">
+                    <div class="project-name">HablaDoc Healthcare Platform</div>
+                    <div class="project-year">2025</div>
+                </div>
+                <div class="project-link"><a href="https://habladoc.com">habladoc.com</a></div>
+                <div class="project-summary">WhatsApp-based telemedicine platform with AI-powered medical assistant providing symptom analysis, clinical triage, and <span class="tech">ICD-11 coding integration</span> for healthcare consultations.</div>
+            </div>
+
+            <div class="project">
+                <div class="project-header">
+                    <div class="project-name">VC Nexus Investment Platform</div>
+                    <div class="project-year">2025</div>
+                </div>
+                <div class="project-summary"><span class="metric">8-component FinTech system</span> with automated analysis and intelligent matching algorithms processing startup-investor compatibility using <span class="tech">Python and TypeScript</span>.</div>
+            </div>
+
+            <div class="project">
+                <div class="project-header">
+                    <div class="project-name">Axiom Industrial Tech</div>
+                    <div class="project-year">2024</div>
+                </div>
+                <div class="project-link"><a href="https://axiomindustrialtech.com">axiomindustrialtech.com</a></div>
+                <div class="project-summary">Industrial compliance platform featuring Vector Fleet Governance Engine, Oculus Site Intelligence System, and Codex Workforce Standards Platform for automated fleet management and safety compliance.</div>
+            </div>
+
+            <div class="project">
+                <div class="project-header">
+                    <div class="project-name">Fudis Customer Management Platform</div>
+                    <div class="project-year">2025</div>
+                </div>
+                <div class="project-link"><a href="https://fudis.app">fudis.app</a></div>
+                <div class="project-summary">FoodTech CRM platform with automated retention workflows and <span class="tech">WhatsApp conversational AI</span> enabling B2B restaurant management and B2C customer engagement.</div>
+            </div>
+
+            <div class="project">
+                <div class="project-header">
+                    <div class="project-name">BuscaTuPepa Search</div>
+                    <div class="project-year">2024</div>
+                </div>
+                <div class="project-link"><a href="https://buscatupepa.com">buscatupepa.com</a></div>
+                <div class="project-summary">Medicine price comparison platform with NLP query understanding and voice integration, enabling users to find medicines at cheapest prices across pharmacies through intelligent search algorithms.</div>
+            </div>
+
+            <div class="project">
+                <div class="project-header">
+                    <div class="project-name">ChapaTuCandidato Political Platform</div>
+                    <div class="project-year">2025</div>
+                </div>
+                <div class="project-link"><a href="https://chapatucandidato.com">chapatucandidato.com</a></div>
+                <div class="project-summary">Political engagement platform for Peru 2026 elections with candidate information system, voter engagement interface, and sentiment tracking for electoral decision-making.</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">Publications</div>
+            <hr class="section-rule">
+
+            <div class="publication">
+                <div class="publication-header">
+                    <div class="publication-title">"The impact of usability on e-government usage in the Peruvian context"</div>
+                    <div class="publication-year">2022</div>
+                </div>
+                <div class="publication-venue">IACIS International Conference on Information Systems</div>
+                <div class="publication-link"><a href="https://iacis.org/iis/2022/4_iis_2022_1-14.pdf">iacis.org/iis/2022/4_iis_2022_1-14.pdf</a></div>
+                <ul class="publication-bullets">
+                    <li>Peer-reviewed research analyzing e-government usability factors in developing countries. Quantitative analysis of user adoption patterns and government digital service effectiveness</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">Education</div>
+            <hr class="section-rule">
+
+            <div class="education-item">
+                <div class="school">Universidad del Pacifico Peru</div>
+                <div class="year">2022</div>
+            </div>
+            <div class="degree">Bachelor of Science, Ingenieria Empresarial</div>
+
+            <div class="education-item">
+                <div class="school">University of London - London School of Economics</div>
+                <div class="year">2022</div>
+            </div>
+            <div class="degree">Bachelor of Science, Management and Digital Innovation</div>
+        </div>
+    </div>
+</body>
+</html>

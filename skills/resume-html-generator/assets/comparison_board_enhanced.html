@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Design Comparison - Oscar Rivas Delgado</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f8fafc;
+            color: #1a202c;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .header h1 {
+            margin: 0 0 10px 0;
+            font-size: 24pt;
+            color: #2d3748;
+        }
+
+        .header p {
+            margin: 0;
+            color: #718096;
+            font-size: 14pt;
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .variant-card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.2s ease;
+        }
+
+        .variant-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .variant-header {
+            padding: 20px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .variant-title {
+            font-size: 18pt;
+            font-weight: 600;
+            margin: 0 0 8px 0;
+            color: #2d3748;
+        }
+
+        .variant-description {
+            color: #718096;
+            margin: 0 0 15px 0;
+            line-height: 1.4;
+        }
+
+        .variant-features {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .variant-features li {
+            color: #4a5568;
+            margin-bottom: 5px;
+            padding-left: 16px;
+            position: relative;
+        }
+
+        .variant-features li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #48bb78;
+            font-weight: bold;
+        }
+
+        .variant-preview {
+            height: 300px;
+            overflow: hidden;
+            position: relative;
+            background: #f7fafc;
+        }
+
+        .preview-iframe {
+            width: 100%;
+            height: 600px;
+            border: none;
+            transform: scale(0.5);
+            transform-origin: top left;
+            pointer-events: none;
+        }
+
+        .variant-actions {
+            padding: 20px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background: #4299e1;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #3182ce;
+        }
+
+        .btn-secondary {
+            background: #edf2f7;
+            color: #4a5568;
+        }
+
+        .btn-secondary:hover {
+            background: #e2e8f0;
+        }
+
+        .feedback-section {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-top: 20px;
+        }
+
+        .feedback-section h2 {
+            margin: 0 0 20px 0;
+            color: #2d3748;
+        }
+
+        .feedback-form {
+            display: grid;
+            gap: 20px;
+        }
+
+        .form-group {
+            display: grid;
+            gap: 8px;
+        }
+
+        .form-group label {
+            font-weight: 500;
+            color: #4a5568;
+        }
+
+        .form-group textarea, .form-group select {
+            padding: 12px;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            font-size: 14px;
+            resize: vertical;
+        }
+
+        .form-group textarea:focus, .form-group select:focus {
+            outline: none;
+            border-color: #4299e1;
+            box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.1);
+        }
+
+        .rating-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .rating-item {
+            text-align: center;
+        }
+
+        .rating-item label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .rating-select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+        }
+
+        .ats-info {
+            background: #f0fff4;
+            border: 1px solid #9ae6b4;
+            border-radius: 6px;
+            padding: 15px;
+            margin-top: 20px;
+        }
+
+        .ats-info h3 {
+            margin: 0 0 10px 0;
+            color: #22543d;
+        }
+
+        .ats-info p {
+            margin: 0;
+            color: #276749;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+
+        @media (max-width: 768px) {
+            .comparison-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .rating-grid {
+                grid-template-columns: 1fr !important;
+            }
+
+            .variant-actions {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Resume Design Comparison</h1>
+        <p>Choose the HTML resume format that works best for both human eyes and ATS machines</p>
+    </div>
+
+    <div class="comparison-grid">
+        <!-- Variant A: Corporate Clean -->
+        <div class="variant-card">
+            <div class="variant-header">
+                <h2 class="variant-title">Corporate Clean</h2>
+                <p class="variant-description">Traditional ATS-first layout with subtle visual hierarchy</p>
+                <ul class="variant-features">
+                    <li>Maximum ATS compatibility</li>
+                    <li>Conservative professional styling</li>
+                    <li>Bold section headers with underlines</li>
+                    <li>Traditional contact layout</li>
+                    <li>Clear company/role separation</li>
+                </ul>
+            </div>
+            <div class="variant-preview">
+                <iframe class="preview-iframe" src="resume_variant_a_corporate.html"></iframe>
+            </div>
+            <div class="variant-actions">
+                <a href="resume_variant_a_corporate.html" target="_blank" class="btn btn-primary">View Full Size</a>
+                <a href="resume_variant_a_corporate.html" download class="btn btn-secondary">Download</a>
+            </div>
+        </div>
+
+        <!-- Variant B: Modern Professional -->
+        <div class="variant-card">
+            <div class="variant-header">
+                <h2 class="variant-title">Modern Professional</h2>
+                <p class="variant-description">Contemporary design with strong typography and spacing</p>
+                <ul class="variant-features">
+                    <li>Modern typography with accent colors</li>
+                    <li>Categorized skills layout</li>
+                    <li>Clean contact icons</li>
+                    <li>Highlighted summary section</li>
+                    <li>Professional card-style jobs</li>
+                </ul>
+            </div>
+            <div class="variant-preview">
+                <iframe class="preview-iframe" src="resume_variant_b_modern.html"></iframe>
+            </div>
+            <div class="variant-actions">
+                <a href="resume_variant_b_modern.html" target="_blank" class="btn btn-primary">View Full Size</a>
+                <a href="resume_variant_b_modern.html" download class="btn btn-secondary">Download</a>
+            </div>
+        </div>
+
+        <!-- Variant C: Silicon Valley Minimal -->
+        <div class="variant-card">
+            <div class="variant-header">
+                <h2 class="variant-title">Silicon Valley Minimal</h2>
+                <p class="variant-description">Clean tech aesthetic with strategic use of color</p>
+                <ul class="variant-features">
+                    <li>Ultra-clean minimal design</li>
+                    <li>Tech-style skill chips</li>
+                    <li>Highlighted metrics and tech stack</li>
+                    <li>Modern grid layouts</li>
+                    <li>Strategic color for key info</li>
+                </ul>
+            </div>
+            <div class="variant-preview">
+                <iframe class="preview-iframe" src="resume_variant_c_minimal.html"></iframe>
+            </div>
+            <div class="variant-actions">
+                <a href="resume_variant_c_minimal.html" target="_blank" class="btn btn-primary">View Full Size</a>
+                <a href="resume_variant_c_minimal.html" download class="btn btn-secondary">Download</a>
+            </div>
+        </div>
+
+        <!-- Variant D: Refined Professional -->
+        <div class="variant-card">
+            <div class="variant-header">
+                <h2 class="variant-title">⭐ Refined Professional</h2>
+                <p class="variant-description">Based on your existing design with optimized content and X→Y→Z achievements</p>
+                <ul class="variant-features">
+                    <li>Proven layout from your current resume</li>
+                    <li>Compact, dense information layout</li>
+                    <li>Times New Roman headers, system fonts</li>
+                    <li>Highlighted metrics and tech keywords</li>
+                    <li>Maximum content in minimal space</li>
+                </ul>
+            </div>
+            <div class="variant-preview">
+                <iframe class="preview-iframe" src="resume_variant_d_refined.html"></iframe>
+            </div>
+            <div class="variant-actions">
+                <a href="resume_variant_d_refined.html" target="_blank" class="btn btn-primary">View Full Size</a>
+                <a href="resume_variant_d_refined.html" download class="btn btn-secondary">Download</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="feedback-section">
+        <h2>Choose Your Preferred Design</h2>
+        <div class="feedback-form">
+            <div class="rating-grid" style="grid-template-columns: repeat(4, 1fr);">
+                <div class="rating-item">
+                    <label for="rating-a">Corporate Clean</label>
+                    <select id="rating-a" class="rating-select">
+                        <option value="">Rate this design...</option>
+                        <option value="5">5 - Perfect</option>
+                        <option value="4">4 - Very Good</option>
+                        <option value="3">3 - Good</option>
+                        <option value="2">2 - Okay</option>
+                        <option value="1">1 - Not for me</option>
+                    </select>
+                </div>
+                <div class="rating-item">
+                    <label for="rating-b">Modern Professional</label>
+                    <select id="rating-b" class="rating-select">
+                        <option value="">Rate this design...</option>
+                        <option value="5">5 - Perfect</option>
+                        <option value="4">4 - Very Good</option>
+                        <option value="3">3 - Good</option>
+                        <option value="2">2 - Okay</option>
+                        <option value="1">1 - Not for me</option>
+                    </select>
+                </div>
+                <div class="rating-item">
+                    <label for="rating-c">Silicon Valley Minimal</label>
+                    <select id="rating-c" class="rating-select">
+                        <option value="">Rate this design...</option>
+                        <option value="5">5 - Perfect</option>
+                        <option value="4">4 - Very Good</option>
+                        <option value="3">3 - Good</option>
+                        <option value="2">2 - Okay</option>
+                        <option value="1">1 - Not for me</option>
+                    </select>
+                </div>
+                <div class="rating-item">
+                    <label for="rating-d">⭐ Refined Professional</label>
+                    <select id="rating-d" class="rating-select">
+                        <option value="">Rate this design...</option>
+                        <option value="5">5 - Perfect</option>
+                        <option value="4">4 - Very Good</option>
+                        <option value="3">3 - Good</option>
+                        <option value="2">2 - Okay</option>
+                        <option value="1">1 - Not for me</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="preferred">Which design do you prefer overall?</label>
+                <select id="preferred">
+                    <option value="">Choose your favorite...</option>
+                    <option value="A">Corporate Clean</option>
+                    <option value="B">Modern Professional</option>
+                    <option value="C">Silicon Valley Minimal</option>
+                    <option value="D">⭐ Refined Professional</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="feedback">What do you like or want to change about your preferred design?</label>
+                <textarea id="feedback" rows="4" placeholder="Share your thoughts on the design, layout, colors, typography, or any specific changes you'd like..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="use-case">Primary use case for this resume:</label>
+                <select id="use-case">
+                    <option value="">Select your main use case...</option>
+                    <option value="startup">Startup/Early-stage Companies</option>
+                    <option value="bigtech">Big Tech (Google, Meta, Apple)</option>
+                    <option value="enterprise">Enterprise Companies</option>
+                    <option value="consulting">Consulting/Advisory Roles</option>
+                    <option value="general">General Applications</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="ats-info">
+        <h3>🤖 ATS Compatibility Notes</h3>
+        <p>All three designs are optimized for ATS parsing with single-column layouts, standard fonts, and proper heading structure. The Corporate Clean variant offers the most traditional ATS compatibility, while Modern Professional and Silicon Valley Minimal add visual appeal while maintaining parsability. All variants include your X→Y→Z achievement format and strategic keyword placement for 65-75% ATS match rates.</p>
+    </div>
+
+    <script>
+        // Simple feedback collection (for demonstration)
+        document.addEventListener('change', function(e) {
+            if (e.target.type === 'select-one' || e.target.type === 'textarea') {
+                console.log(`${e.target.id}: ${e.target.value}`);
+            }
+        });
+
+        // Add click handlers for demo
+        document.querySelectorAll('.btn-primary').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                if (this.textContent === 'View Full Size') {
+                    e.preventDefault();
+                    window.open(this.href, '_blank', 'width=900,height=1200,scrollbars=yes');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

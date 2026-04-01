@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{NAME}} - {{TITLE}}</title>
+    <style>
+        @page {
+            margin: 0.75in;
+            size: A4;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Calibri', 'Arial', sans-serif;
+            font-size: 11pt;
+            line-height: 1.4;
+            color: #000000;
+            background-color: #ffffff;
+            max-width: 8.5in;
+            margin: 0 auto;
+            padding: 0.75in;
+        }
+
+        /* Header - Traditional Corporate Style */
+        .header {
+            text-align: center;
+            margin-bottom: 24px;
+            padding-bottom: 18px;
+            border-bottom: 2px solid #333333;
+        }
+
+        .name {
+            font-size: 20pt;
+            font-weight: bold;
+            margin-bottom: 6px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .title {
+            font-size: 13pt;
+            margin-bottom: 12px;
+            color: #444444;
+            font-weight: 600;
+        }
+
+        .contact {
+            font-size: 10pt;
+            color: #666666;
+            line-height: 1.3;
+        }
+
+        .contact a {
+            color: #666666;
+            text-decoration: none;
+        }
+
+        /* Section Styling - Conservative */
+        .section {
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            font-size: 12pt;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            padding-bottom: 4px;
+            border-bottom: 1px solid #cccccc;
+            letter-spacing: 0.5px;
+        }
+
+        /* Experience Layout - Traditional */
+        .job {
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+        }
+
+        .job-header {
+            margin-bottom: 4px;
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+
+        .job-title-company {
+            font-weight: bold;
+            font-size: 11pt;
+        }
+
+        .company {
+            color: #000000;
+        }
+
+        .job-title {
+            color: #333333;
+        }
+
+        .dates-location {
+            font-size: 10pt;
+            color: #666666;
+            font-style: italic;
+        }
+
+        .bullet {
+            margin-left: 18px;
+            margin-bottom: 4px;
+            text-align: justify;
+            line-height: 1.3;
+        }
+
+        .bullet::before {
+            content: "• ";
+            margin-left: -18px;
+            color: #333333;
+        }
+
+        .metric {
+            font-weight: 600;
+        }
+
+        .tech {
+            font-weight: 500;
+        }
+
+        /* Skills - Clean List */
+        .skills {
+            text-align: justify;
+            line-height: 1.5;
+            font-size: 11pt;
+        }
+
+        .skills-highlight {
+            font-weight: 600;
+        }
+
+        /* Projects - Structured */
+        .project {
+            margin-bottom: 14px;
+        }
+
+        .project-header {
+            font-weight: bold;
+            margin-bottom: 3px;
+            font-size: 11pt;
+        }
+
+        .project-subtitle {
+            font-style: italic;
+            font-size: 10pt;
+            margin-bottom: 4px;
+            color: #555555;
+        }
+
+        .project-url {
+            color: #666666;
+            font-size: 9pt;
+        }
+
+        /* Education & Publications */
+        .education-item, .publication {
+            margin-bottom: 10px;
+        }
+
+        .education-school, .publication-title {
+            font-weight: bold;
+        }
+
+        .education-dates {
+            float: right;
+            color: #666666;
+            font-size: 10pt;
+        }
+
+        .publication-details {
+            font-size: 10pt;
+            color: #666666;
+            margin-bottom: 3px;
+        }
+
+        /* Professional Summary */
+        .summary {
+            text-align: justify;
+            line-height: 1.4;
+            font-size: 11pt;
+            margin-bottom: 4px;
+        }
+
+        /* Page break control */
+        .page-break {
+            page-break-before: always;
+        }
+
+        .no-break {
+            page-break-inside: avoid;
+        }
+
+        @media print {
+            body {
+                font-size: 10.5pt;
+            }
+            .section {
+                margin-bottom: 18px;
+            }
+            .header {
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    {{CONTENT}}
+</body>
+</html>

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{NAME}} - {{TITLE}}</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            line-height: 1.15;
+            margin: 0.45in;
+            color: #000;
+            background: #fff;
+            font-size: 9pt;
+            max-width: 8.5in;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 12px;
+        }
+
+        .name {
+            font-family: "Times New Roman", Times, serif;
+            font-size: 22pt;
+            font-weight: normal;
+            margin: 0 0 3px 0;
+            color: #000;
+        }
+
+        .title {
+            font-size: 10pt;
+            color: #000;
+            margin: 0 0 8px 0;
+            font-weight: 600;
+        }
+
+        .contact {
+            font-size: 9pt;
+            color: #000;
+            margin: 0;
+            font-weight: normal;
+            line-height: 1.0;
+        }
+
+        .section {
+            margin-bottom: 6px;
+        }
+
+        .section-title {
+            font-family: "Times New Roman", Times, serif;
+            font-size: 10.5pt;
+            font-weight: normal;
+            margin: 0 0 1px 0;
+            color: #000;
+            text-transform: uppercase;
+        }
+
+        .section-rule {
+            border: none;
+            border-top: 1px solid #ccc;
+            margin: 0 0 4px 0;
+            height: 1px;
+        }
+
+        .summary-text {
+            font-size: 9pt;
+            line-height: 1.2;
+            text-align: justify;
+            margin: 0 0 2px 0;
+        }
+
+        .skills-text {
+            font-size: 9pt;
+            line-height: 1.2;
+            margin: 0;
+        }
+
+        .skills-highlight {
+            font-weight: 600;
+        }
+
+        .job {
+            margin-bottom: 6px;
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 0px;
+        }
+
+        .company {
+            font-weight: bold;
+            font-size: 9.5pt;
+            color: #000;
+        }
+
+        .dates {
+            font-size: 8pt;
+            color: #000;
+            font-weight: normal;
+        }
+
+        .job-details {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 1px;
+        }
+
+        .role {
+            font-style: italic;
+            font-size: 8.5pt;
+            color: #666;
+        }
+
+        .location {
+            font-size: 8pt;
+            color: #000;
+            font-weight: normal;
+        }
+
+        .job-bullets {
+            margin: 0;
+            padding-left: 12px;
+        }
+
+        .job-bullets li {
+            margin-bottom: 1px;
+            font-size: 8.5pt;
+            line-height: 1.15;
+            text-align: justify;
+        }
+
+        .metric {
+            font-weight: 600;
+        }
+
+        .tech {
+            font-weight: 500;
+        }
+
+        .project {
+            margin-bottom: 5px;
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 0px;
+        }
+
+        .project-name {
+            font-weight: bold;
+            font-size: 9pt;
+            color: #000;
+        }
+
+        .project-year {
+            font-size: 8pt;
+            color: #000;
+            font-weight: normal;
+        }
+
+        .project-description {
+            font-style: italic;
+            font-size: 8pt;
+            color: #666;
+            margin-bottom: 1px;
+        }
+
+        .project-link {
+            font-size: 8pt;
+            color: #0066cc;
+            margin-bottom: 1px;
+        }
+
+        .project-link a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+
+        .project-bullets {
+            margin: 0;
+            padding-left: 12px;
+        }
+
+        .project-bullets li {
+            margin-bottom: 0px;
+            font-size: 8pt;
+            line-height: 1.1;
+            text-align: justify;
+        }
+
+        .publication {
+            margin-bottom: 4px;
+        }
+
+        .publication-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 0px;
+        }
+
+        .publication-title {
+            font-weight: bold;
+            font-size: 9pt;
+            color: #000;
+        }
+
+        .publication-year {
+            font-size: 8pt;
+            color: #000;
+            font-weight: normal;
+        }
+
+        .publication-venue {
+            font-style: italic;
+            font-size: 8pt;
+            color: #666;
+            margin-bottom: 1px;
+        }
+
+        .publication-link {
+            font-size: 7.5pt;
+            color: #0066cc;
+            margin-bottom: 0px;
+        }
+
+        .publication-link a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+
+        .publication-bullets {
+            margin: 0;
+            padding-left: 12px;
+        }
+
+        .publication-bullets li {
+            margin-bottom: 0px;
+            font-size: 8pt;
+            line-height: 1.1;
+        }
+
+        .education-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 0px;
+        }
+
+        .school {
+            font-weight: bold;
+            font-size: 9pt;
+            color: #000;
+        }
+
+        .year {
+            font-size: 8pt;
+            color: #000;
+        }
+
+        .degree {
+            font-style: italic;
+            font-size: 8pt;
+            color: #666;
+            margin-bottom: 2px;
+        }
+
+        .page-break {
+            page-break-before: always;
+        }
+
+        @media print {
+            body {
+                margin: 0.45in;
+            }
+
+            .section {
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+
+            .job {
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+
+            .project {
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+
+            .publication {
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    {{CONTENT}}
+</body>
+</html>
