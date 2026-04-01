@@ -47,37 +47,7 @@ storage:
 ## Integration Configuration (`config/integrations.yaml`)
 
 ```yaml
-# Premium API (Mysios Labs)
-premium_api:
-  endpoint: "https://api.jobseeking.ai"
-  api_key: ""                        # Set via: export CAREER_API_KEY=...
-  api_key_configured: false
-  features:
-    ats_optimization: true
-    salary_research: true
-    cover_letter_ai: true
-    interview_ai: true
-
-# Supabase (optional cloud sync)
-supabase:
-  enabled: false
-  project_url: ""                    # https://xxx.supabase.co
-  anon_key: ""                       # Set via: export SUPABASE_ANON_KEY=...
-  features:
-    cloud_profile_sync: false
-    application_tracking: false
-    analytics_dashboard: false
-
-# Firecrawl (web scraping for research)
-firecrawl:
-  enabled: false
-  api_key: ""                        # Set via: export FIRECRAWL_API_KEY=...
-  features:
-    company_research: true
-    job_posting_extraction: true
-    salary_scraping: true
-
-# Job board integrations
+# Job board integrations (local tracking only)
 job_boards:
   linkedin:
     profile_url: ""

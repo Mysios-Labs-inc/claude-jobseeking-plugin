@@ -1,7 +1,7 @@
 {
   "name": "career-intelligence-plugin",
-  "version": "1.3.2",
-  "description": "🧠 AI-powered career intelligence with intelligent profile analysis, skills gap assessment, and market intelligence. Part of the Mysios Labs Professional Intelligence Suite - integrates with Strategic Research Intelligence for complete professional workflows.",
+  "version": "1.3.3",
+  "description": "Career intelligence plugin for Claude Code with resume optimization and job search tools.",
   "author": {
     "name": "Mysios Labs Inc",
     "email": "hello@mysioslabs.com"
@@ -9,15 +9,5 @@
   "homepage": "https://github.com/Mysios-Labs-inc/career-intelligence-plugin",
   "repository": "https://github.com/Mysios-Labs-inc/career-intelligence-plugin",
   "license": "MIT",
-  "keywords": ["career-intelligence", "professional-development", "job-search", "resume", "career", "mysios-professional", "ai-assistant"],
-  "userConfig": {
-    "api_key": {
-      "type": "string",
-      "title": "Premium API Key (Optional)",
-      "description": "Premium API key for advanced features (get yours at mysioslabs.com). Leave empty for basic functionality.",
-      "sensitive": true,
-      "required": false,
-      "default": ""
-    }
-  }
+  "keywords": ["career", "resume", "job-search", "claude-plugin"]
 }

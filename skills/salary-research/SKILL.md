@@ -7,32 +7,16 @@ description: Comprehensive salary research and negotiation coaching with real-ti
 
 I'll help you understand your market value, research competitive compensation, and negotiate effectively to maximize your earning potential.
 
-## Free Features
-- Basic salary range estimates for common roles
-- General negotiation tips and best practices
-- Industry compensation trend overviews
-- Standard benefits package information
+## Features
+- Salary range estimates for roles
+- Negotiation tips and best practices  
+- Industry compensation trends
+- Benefits package guidance
 - Negotiation conversation frameworks
-
-## Premium Features (Requires API Key)
-- Real-time salary data from multiple sources
-- Location-specific compensation analysis
-- Company-specific salary intelligence
-- Equity and benefits valuation tools
-- Personalized negotiation strategies and scripts
-- Offer comparison and decision support
-- Long-term career earning projections
 
 ## How to Use
 
-**For basic salary research:**
-Provide your role, experience level, and location. I'll give you general market data and negotiation guidance.
-
-**For comprehensive market analysis:**
-1. Set up your API key from jobseeking.ai
-2. Input your specific role, skills, and experience
-3. Get detailed compensation reports and negotiation coaching
-4. Receive personalized strategies for your situation
+Provide your role, experience level, and location for salary research and negotiation guidance.
 
 ## Example Usage
 ```

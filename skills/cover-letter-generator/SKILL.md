@@ -7,31 +7,18 @@ description: Generate personalized, compelling cover letters tailored to specifi
 
 I'll create personalized cover letters that capture hiring managers' attention and showcase your unique value proposition for each role.
 
-## Free Features
-- Basic cover letter structure and formatting
-- General industry best practices
+## Features
+- Cover letter structure and formatting
+- Industry best practices
 - Professional tone and language suggestions
-- Standard template customization
+- Template customization
 - Grammar and style review
-
-## Premium Features (Requires API Key)
-- Company-specific research and personalization
-- Hiring manager name discovery and personalization
-- Industry-specific language and keywords
+- Company-specific personalization
 - Achievement quantification and impact statements
-- A/B testing different approaches for optimal results
-- Integration with your application tracking
 
 ## How to Use
 
-**For basic cover letters:**
-Provide the job title, company name, and key requirements. I'll create a professional cover letter template you can customize.
-
-**For premium personalized cover letters:**
-1. Configure your API key from jobseeking.ai
-2. Provide the complete job posting or URL
-3. Share your resume for context
-4. Receive a fully personalized, research-backed cover letter
+Provide the job title, company name, job posting details, and your resume. I'll create a personalized cover letter for your application.
 
 ## Example Usage
 ```

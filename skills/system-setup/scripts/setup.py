@@ -688,10 +688,6 @@ For each project, capture:
         }
 
         integrations = {
-            "premium_api": {
-                "endpoint": "https://api.jobseeking.ai",
-                "api_key_configured": False,
-            },
             "supabase": {
                 "enabled": False,
                 "project_url": "",

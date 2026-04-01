@@ -7,32 +7,19 @@ description: Comprehensive interview preparation with company research, question
 
 I'll help you prepare thoroughly for any interview with research-backed strategies, practice questions, and personalized coaching tailored to your target role and company.
 
-## Free Features
-- Common interview questions for your role
-- Basic STAR method coaching
-- General company research tips
-- Standard behavioral question practice
+## Features
+- Interview questions for your role
+- STAR method coaching
+- Company research and preparation
+- Behavioral question practice
 - Interview day preparation checklist
-
-## Premium Features (Requires API Key)
-- Deep company culture and values research
-- Recent company news and strategic initiatives
-- Interviewer background research and insights
-- Role-specific technical question practice
+- Company culture and values research
+- Role-specific question practice
 - Mock interview simulation with feedback
-- Salary negotiation preparation and strategies
-- Post-interview follow-up recommendations
 
 ## How to Use
 
-**For basic interview prep:**
-Tell me about the role and company, and I'll provide fundamental interview preparation including common questions and best practices.
-
-**For comprehensive preparation:**
-1. Set up your API key from jobseeking.ai
-2. Provide the job posting and company details
-3. Share your resume for personalized coaching
-4. Get detailed preparation materials and practice sessions
+Provide the role, company details, and job posting for comprehensive interview preparation including questions, research, and coaching.
 
 ## Example Usage
 ```

@@ -125,22 +125,9 @@ storage:
   backup_frequency: "weekly"
 ```
 
-### Integration Configuration
+### Job Board Configuration
 ```yaml
-# career-ops/config/integrations.yaml
-premium_api:
-  endpoint: "https://api.jobseeking.ai"
-  api_key_configured: false
-
-supabase:
-  enabled: false
-  project_url: ""
-  anon_key: ""
-
-firecrawl:
-  enabled: false
-  api_key_configured: false
-
+# career-ops/config/job-boards.yaml
 job_boards:
   linkedin:
     profile_url: ""

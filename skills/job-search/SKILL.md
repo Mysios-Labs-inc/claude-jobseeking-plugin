@@ -7,32 +7,16 @@ description: Intelligent job search with personalized recommendations and applic
 
 I'll help you find and apply to the right opportunities with intelligent search, personalized recommendations, and comprehensive application tracking.
 
-## Free Features
-- Basic job search strategy and planning
-- Resume and LinkedIn profile optimization tips
-- General application advice and best practices
-- Industry trend insights and market overview
-- Application organization and tracking templates
-
-## Premium Features (Requires API Key)
-- Intelligent job matching based on your profile
-- Real-time job alerts from multiple boards (LinkedIn, Indeed, AngelList)
-- Application success rate analytics
-- Personalized job recommendations with fit scores
-- Automated application tracking and follow-up reminders
-- Salary range analysis for each opportunity
-- Network analysis and warm introduction opportunities
+## Features
+- Job search strategy and planning
+- Resume and LinkedIn optimization tips
+- Application advice and best practices
+- Industry insights and market overview
+- Application organization and tracking
 
 ## How to Use
 
-**For strategic job search guidance:**
-Share your career goals, target roles, and preferences. I'll help you create an effective job search strategy and provide market insights.
-
-**For personalized job matching:**
-1. Configure your API key from jobseeking.ai
-2. Set up your job search preferences and criteria
-3. Receive daily personalized job recommendations
-4. Track applications and get follow-up reminders
+Share your career goals, target roles, and preferences for job search strategy and guidance.
 
 ## Example Usage
 ```
