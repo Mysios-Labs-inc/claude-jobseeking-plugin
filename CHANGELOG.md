@@ -2,6 +2,20 @@
 
 All notable changes to the Claude Jobseeking Plugin will be documented in this file.
 
+## [1.3.1] - 2026-04-01
+
+### 🔧 Configuration Fixes
+- **Fixed API key requirement**: Made API key optional with graceful fallback for users without premium features
+- **Fixed version display**: Corrected version showing as v1.2.0 instead of current version
+- **Improved packaging**: Package script now reads version dynamically from package.json
+- **Enhanced error handling**: Better user experience for missing configurations
+- **Marketplace ready**: Proper versioning and tagging for distribution
+
+### 🏪 Marketplace Distribution
+- Created proper release package: `claude-jobseeking-plugin-v1.3.1.zip`
+- Updated Git tags for marketplace integration
+- Verified plugin works without API key configuration
+
 ## [1.3.0] - 2026-04-01
 
 ### 🏗️ System Setup Skill
