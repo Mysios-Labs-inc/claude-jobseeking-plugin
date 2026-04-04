@@ -1,53 +1,250 @@
 ---
 name: profile-setup
-description: One-time comprehensive job seeker profile creation that captures professional data, career goals, preferences, and job search criteria. Use when users need to set up their jobseeking profile for the first time, update existing profile data, or when other skills need access to user profile information for personalization and automation.
+description: Interactive job seeker profile creation with guided workflows, multiple choice options, and smart branching. Captures professional data, career goals, and preferences through engaging decision trees that adapt to user needs and experience levels.
 ---
 
-# Profile Setup - Professional Data Capture
+# Profile Setup - Interactive Professional Data Capture
 
-Create and manage your comprehensive job seeker profile that powers all jobseeking automation features. This is the foundation skill that enables personalized resume generation, job matching, and application assistance.
+Create your comprehensive job seeker profile through an engaging, interactive experience with guided questions, smart choices, and personalized workflows that adapt to your career stage and goals.
 
-## Core Purpose
+## 🎯 Interactive Setup Experience
 
-**One-time setup that eliminates repetitive data entry.** Instead of re-entering your information for every resume, job application, or search, this skill captures everything once and makes it available to all other jobseeking skills.
+### **Welcome & Goal Setting**
+When users run `/profile-setup`, start with:
 
-## What Gets Captured
+```
+🎯 Career Intelligence Profile Setup (8-12 minutes)
 
-### Personal Information
-- Full name and professional title
-- Contact information (email, phone, location)
-- LinkedIn profile and portfolio URLs
-- Location preferences and remote work flexibility
+What brings you here today?
+a) Starting active job search
+b) Career transition/pivot planning  
+c) General career development
+d) Specific opportunity preparation
 
-### Professional Profile
-- Career summary and elevator pitch
-- Core competencies and skill matrix
-- Years of experience and seniority level
-- Industry preferences and specializations
+Your selection customizes the entire setup experience!
+```
 
-### Experience Timeline
-- Work history with quantified achievements
-- Key projects and their impact
-- Leadership and team management experience
-- Technical skills and tools used
+### **Career Stage Detection** 
+```
+📊 Let's understand your experience level:
 
-### Education & Credentials
-- Degrees, certifications, and courses
-- Institution names and graduation dates
-- Relevant coursework and academic achievements
-- Professional development and training
+1. **Current career stage?**
+   a) Recent graduate (0-2 years experience)
+   b) Early career professional (2-5 years)
+   c) Mid-level professional (5-10 years)  
+   d) Senior professional (10-15 years)
+   e) Executive/leadership (15+ years)
 
-### Job Search Preferences
-- Target roles and job titles
-- Salary expectations and negotiation priorities
-- Company size and culture preferences
-- Benefits and perks that matter most
-- Deal-breakers and non-negotiables
+2. **Career path trajectory?**
+   a) Steady progression in same field
+   b) Recent career change/pivot
+   c) Returning after gap (parental leave, education, etc.)
+   d) Significant role/industry transition
 
-### Application Settings
-- Cover letter tone and style preferences
-- Resume format and design choices
-- Application follow-up preferences
+Progress: ████░░░░░ Step 1 of 6 complete
+```
+
+### **Industry & Role Targeting**
+```
+🏢 Industry and Role Focus:
+
+1. **Primary industry experience?** (Select top 2)
+   □ Technology/Software
+   □ Healthcare/Biotech  
+   □ Financial Services
+   □ Consulting/Professional Services
+   □ Manufacturing/Industrial
+   □ Education/Research
+   □ Government/Non-profit
+   □ Other: ___________
+
+2. **Target role types?** (Select all that apply)
+   □ Individual contributor (IC)
+   □ Technical lead/Senior IC
+   □ People manager
+   □ Director/VP
+   □ C-suite/Executive
+   □ Founder/Entrepreneur
+
+Based on your selections, I'll customize the skill depth questions.
+
+Progress: ████████░ Step 2 of 6 complete
+```
+
+### **Technical Depth & Skills** (Adaptive based on previous choices)
+```
+💻 Technical Profile:
+
+1. **Technical involvement level?**
+   a) Highly technical (hands-on coding, engineering)
+   b) Technical management (oversee technical teams)
+   c) Technical business (PM, sales engineering, etc.)  
+   d) Business-focused (minimal technical requirements)
+
+2. **AI/ML experience?** (Given current market focus)
+   a) No direct experience
+   b) Basic understanding/user of AI tools
+   c) Product management of AI features
+   d) Technical implementation of AI/ML
+   e) AI/ML research or specialized expertise
+
+3. **Years in current specialization?**
+   [Enter number: ____] years
+
+Progress: ████████████░ Step 3 of 6 complete
+```
+
+### **Work Preferences & Constraints**
+```
+⚖️ Work Style and Constraints:
+
+1. **Location preferences?**
+   a) Specific city: ____________
+   b) Remote-first required
+   c) Hybrid (2-3 days office)
+   d) Flexible/willing to relocate
+
+2. **Company size preferences?** (Rank 1-4, 1 = most preferred)
+   ___ Startup (0-50 employees)
+   ___ Scale-up (50-500 employees)  
+   ___ Mid-size (500-5,000 employees)
+   ___ Large enterprise (5,000+ employees)
+
+3. **Timeline urgency?**
+   a) Actively interviewing (need materials ASAP)
+   b) Active search (applying regularly)
+   c) Passively exploring (quality opportunities only)
+   d) Future planning (6+ months timeline)
+
+Progress: ████████████████░ Step 4 of 6 complete
+```
+
+### **Experience Deep-Dive** (Questions adapt based on career stage)
+```
+📈 Experience Details:
+
+[For Senior+ Professionals:]
+1. **Leadership experience?**
+   a) Individual contributor throughout
+   b) Team lead (2-5 people)
+   c) Manager (5-15 people)
+   d) Director+ (15+ people)
+
+2. **P&L responsibility?**
+   a) No budget responsibility
+   b) Project budgets ($10K-$100K)
+   c) Department budgets ($100K-$1M+)
+
+[For Technical Roles:]
+1. **Technical scope?**
+   a) Individual features/components
+   b) Full product/system ownership
+   c) Platform/infrastructure
+   d) Multi-system architecture
+
+Progress: ████████████████████░ Step 5 of 6 complete
+```
+
+### **Communication Style Preferences**
+```
+📝 Resume and Communication Style:
+
+1. **Content emphasis?**
+   a) Technical depth and implementation details
+   b) Business impact and results focus  
+   c) Leadership and team achievements
+   d) Balanced technical + business approach
+
+2. **Achievement highlighting style?**
+   a) Quantified metrics and data focus
+   b) Narrative impact stories
+   c) Technical accomplishment details
+   d) Strategic business outcomes
+
+3. **Professional tone?**
+   a) Conservative/traditional
+   b) Modern professional
+   c) Creative/innovative
+   d) Industry-specific
+
+Progress: ████████████████████████ Step 6 of 6 complete
+```
+
+## 🚀 Smart Workflow Features
+
+### **Branching Logic**
+- **Recent Graduates**: Focus on education, projects, internships, skill development
+- **Career Changers**: Emphasize transferable skills, motivation, learning agility
+- **Senior Professionals**: Leadership impact, strategic decisions, P&L responsibility
+- **Technical Roles**: Technical depth, system ownership, innovation examples
+
+### **Smart Defaults**
+- Auto-detect from uploaded resume if available
+- Use existing profile data to prefill choices
+- Suggest industry-standard ranges for salary expectations
+- Recommend skills based on role and industry selections
+
+### **Progress Tracking**
+```
+Profile Setup Progress:
+████████████░░░░░ 75% Complete
+
+✓ Career Stage & Goals (2 min)
+✓ Industry & Role Focus (3 min)  
+✓ Technical & Skills Profile (2 min)
+▶ Work Preferences (1 min remaining)
+□ Experience Details (2 min)
+□ Communication Style (1 min)
+
+[Save Progress] [Skip Section] [Back] [Continue]
+```
+
+### **Validation & Confirmation**
+```
+✅ Profile Setup Complete!
+
+📊 Your Profile Summary:
+- Career Stage: Mid-level Professional (7 years)
+- Industry Focus: Technology, Healthcare
+- Role Target: Senior Product Manager
+- Location: Remote-first, SF Bay Area
+- Timeline: Active search (3-month goal)
+- Style: Business impact with technical credibility
+
+🎯 Personalized Recommendations Ready:
+- Resume Template: Technical Product Manager (Modern)
+- Cover Letter Style: Business impact with technical depth
+- Interview Prep Focus: Product strategy + technical competency
+- Job Search: 15 target companies identified
+
+Does this look accurate?
+[Confirm & Continue] [Modify Sections] [Start Over]
+```
+
+## 📋 Implementation Workflow
+
+When users run `/profile-setup`:
+
+1. **Welcome Screen**: Goal setting and timeline
+2. **Career Stage**: Adaptive questioning based on experience level  
+3. **Industry Focus**: Multi-select with industry-specific follow-ups
+4. **Technical Depth**: Role-appropriate technical assessment
+5. **Work Preferences**: Location, company, urgency preferences
+6. **Experience Details**: Adaptive to career stage and role type
+7. **Communication Style**: Content and tone preferences
+8. **Validation**: Summary with modification options
+9. **Next Steps**: Direct integration with other skills
+
+## 🎯 Next Step Integration
+```
+Ready to use your profile?
+[Generate Resume] [Set up Job Search] [Create Cover Letter] [Interview Prep]
+
+Or continue customizing:
+[Upload Resume] [Add Projects] [Import LinkedIn] [Salary Research]
+```
+
+This interactive approach transforms a tedious form-filling exercise into an engaging, personalized setup experience that users actually enjoy completing!
 - Interview scheduling availability
 
 ## 📁 Workspace Structure Created

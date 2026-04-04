@@ -1,83 +1,238 @@
 ---
 name: resume-html-generator
-description: Convert markdown resumes to professional HTML formats with 4 proven design variants (Corporate Clean, Modern Professional, Silicon Valley Minimal, Refined Professional). Applies X→Y→Z achievement formatting, ATS optimization, metric highlighting, and authentic voice preservation. Use when you need to convert a markdown resume to HTML for web viewing, PDF generation, or professional presentation with multiple design options.
+description: Interactive resume HTML generation with guided design selection, customization options, and PDF optimization. Features 4 proven variants, smart design recommendations based on industry and role, and personalized styling choices for maximum impact.
 ---
 
-# Resume HTML Generator - Markdown to Professional HTML Conversion
+# Resume HTML Generator - Interactive Professional Resume Creation
 
-Transform markdown resumes into production-ready HTML formats with 4 proven design variants that balance human appeal with ATS optimization. Each variant includes X→Y→Z achievement highlighting, metric emphasis, and strategic keyword placement for 65-75% ATS compatibility.
+Transform your resume through guided design selection and interactive customization with 4 proven HTML variants, smart industry recommendations, and personalized styling options that maximize both visual appeal and ATS compatibility.
 
-## 🎨 Design Variants
+## 🎯 Interactive Design Selection
 
-### 1. Corporate Clean
-**Best for**: Traditional industries, conservative companies, maximum ATS compatibility
-- Traditional ATS-first layout with subtle visual hierarchy
-- Conservative professional styling with bold section headers
-- Times New Roman headers with system fonts
-- Clear company/role separation
-- Maximum compatibility with all ATS systems
+### **Welcome & Goal Setting**
+When users run `/resume-html-generator`, start with:
 
-### 2. Modern Professional
-**Best for**: Mid-size companies, professional services, contemporary workplaces
-- Contemporary design with strong typography and blue accent colors
-- Categorized skills layout with highlighted summary section
-- Clean contact icons and professional card-style job entries
-- Balanced visual appeal with ATS compatibility
-
-### 3. Silicon Valley Minimal
-**Best for**: Tech startups, modern companies, creative roles
-- Ultra-clean minimal design with strategic color usage
-- Tech-style skill chips with highlighted AI/ML technologies
-- Metric highlighting throughout experience sections
-- Modern typography (Inter/SF Pro) with grid-based layouts
-
-### 4. Refined Professional ⭐ (Recommended)
-**Best for**: All industries, proven format, maximum content density
-- Based on proven resume layouts with optimized content
-- Compact, dense information layout maximizing content in minimal space
-- Highlighted metrics and tech keywords with strategic emphasis
-- Perfect balance of professionalism and modern appeal
-
-## 🚀 Key Features
-
-- **X→Y→Z Achievement Formula**: Automatically converts work experience bullets to "Accomplished [X] measured by [Y] using [Z]" format
-- **Project Condensation**: Converts multi-bullet project sections to impactful one-liners for space optimization
-- **2-Page PDF Optimization**: Strategic content layout and CSS styling for perfect 2-page fit
-- **Metric Highlighting**: Bold styling for quantified results (10x, 35%, $65K+, 500+ clients)
-- **Tech Keyword Emphasis**: Strategic highlighting of relevant technologies and skills
-- **ATS Optimization**: Single-column layouts, semantic HTML, standard fonts
-- **Authentic Voice Preservation**: Maintains personal voice while optimizing structure
-- **Comparison Board**: Side-by-side preview of all variants with rating system
-
-## 📋 Usage
-
-### Basic Usage
 ```
-/resume-html-generator
+🎨 Professional Resume HTML Generator
 
-I'll analyze your resume content and convert to 4 HTML variants with:
-- Content analysis and space optimization recommendations
-- Professional styling and typography
-- ATS-optimized structure
-- X→Y→Z achievement formatting
-- Project condensation for 2-page PDF optimization
-- Interactive comparison board for selection
+What's your primary goal today?
+a) Create beautiful HTML resume for online viewing
+b) Generate PDF-optimized version for applications
+c) Compare different design styles
+d) Update existing resume with new format
+
+Your choice customizes the workflow and recommendations!
 ```
 
-### Advanced Workflow with Content Analysis
+### **Smart Design Recommendation**
 ```
-/resume-html-generator --analyze
+🏢 Let me recommend the best design for you:
 
-Complete optimization workflow:
-1. Content Analysis: Space usage, value ranking, optimization opportunities
-2. User Feedback: Clarify missing context, project purposes, institutional details
-3. Content Optimization: Apply X→Y→Z formula, condense projects to one-liners
-4. HTML Generation: Create 4 variants with 2-page PDF optimization
-5. Quality Validation: User review of spacing, style, content accuracy
-6. Final Delivery: Clean file organization with version management
+1. **What industry/role are you targeting?**
+   a) Traditional/Conservative (finance, law, government)
+   b) Technology/Software (startups, tech companies) 
+   c) Creative/Design (marketing, media, advertising)
+   d) Professional Services (consulting, healthcare)
+   e) Mixed/Multiple industries
+
+2. **What's your seniority level?**
+   a) Entry/Mid-level (0-5 years)
+   b) Senior professional (5-10 years)
+   c) Leadership/Executive (10+ years)
+
+3. **Company size preference?**
+   a) Startups & scale-ups (modern, innovative)
+   b) Mid-size companies (professional, polished)
+   c) Large corporations (traditional, conservative)
+   d) Mixed/flexible
+
+Based on your choices, I'll recommend the optimal design variant!
 ```
 
-### With Specific Variant
+### **Design Variant Selection**
+```
+🎨 Choose Your Design Style:
+
+Based on your profile (Tech/Senior/Mixed companies), I recommend:
+
+**⭐ RECOMMENDED: Refined Professional**
+✅ Perfect for your background
+✅ Maximum content density
+✅ Works across all industries
+[Preview] [Select] [Customize]
+
+**Other Options:**
+**A. Corporate Clean** (Traditional/Conservative)
+- Maximum ATS compatibility
+- Times New Roman styling
+[Preview] [Select]
+
+**B. Modern Professional** (Mid-size/Professional)  
+- Blue accent colors
+- Clean contemporary design
+[Preview] [Select]
+
+**C. Silicon Valley Minimal** (Tech/Startups)
+- Ultra-clean design
+- Tech-style skill chips
+[Preview] [Select]
+
+**D. Compare All Variants** (See side-by-side)
+[Generate Comparison Board]
+
+Which style resonates with your target roles?
+```
+
+### **Customization Options**
+```
+🎛️ Customize Your Selected Design:
+
+1. **Color scheme preference?**
+   a) Professional blues (recommended)
+   b) Classic black & white
+   c) Subtle accent colors
+   d) Custom brand colors: ___________
+
+2. **Content emphasis style?**
+   a) Technical skills highlighted
+   b) Business results emphasized
+   c) Leadership achievements focus
+   d) Balanced approach
+
+3. **Skills section format?**
+   a) Flat list (space-efficient)
+   b) Categorized groups (organized)
+   c) Skill chips with proficiency
+   d) Years of experience included
+
+4. **Project URLs display?**
+   a) Separate lines with clickable links
+   b) Inline within descriptions
+   c) QR codes for print versions
+   d) Minimal/text-only references
+
+Customizing your design...
+```
+
+### **PDF Optimization Preferences**
+```
+📄 PDF Generation Options:
+
+1. **Primary use case?**
+   a) Online applications (ATS-optimized)
+   b) Print for interviews (high-quality)
+   c) Email attachments (balanced)
+   d) Portfolio display (visual impact)
+
+2. **Page length preference?**
+   a) Strict 1-page (entry-level)
+   b) Optimal 2-page (professional standard)
+   c) 3-page if needed (executive/academic)
+   d) Auto-optimize for content
+
+3. **Print quality settings?**
+   a) High resolution (interviews/portfolio)
+   b) Standard quality (online applications)
+   c) Compact file size (email-friendly)
+
+4. **Header/footer options?**
+   a) Clean pages (no headers/footers)
+   b) Page numbers only
+   c) Name header on continuation pages
+   d) Confidential watermark
+
+Optimizing for your preferred use case...
+```
+
+## 🚀 Interactive Generation Process
+
+### **Content Analysis & Optimization**
+```
+🔍 Analyzing your resume content...
+
+📊 Content Assessment:
+- Total length: 847 words
+- Achievement density: Good (8 quantified results)
+- Keyword optimization: 73% for target role
+- ATS compatibility: 85% baseline
+
+🎯 Optimization Opportunities:
+1. 🟡 Projects section can be condensed (save 40% space)
+2. 🟢 Add 3 more quantified achievements
+3. 🟡 Enhance technical keywords for AI/ML roles
+
+Apply optimizations?
+[Yes, optimize all] [Choose specific fixes] [Keep original content]
+```
+
+### **Real-Time Preview**
+```
+👀 Preview Your Resume:
+
+[Live preview window showing selected design]
+
+How does this look?
+a) Perfect, generate final versions
+b) Adjust colors/spacing
+c) Try different layout  
+d) Compare with other variants
+
+Quick adjustments available:
+- Font size: [Smaller] [Current] [Larger]
+- Spacing: [Compact] [Standard] [Spacious]
+- Colors: [Change accent color]
+
+[Apply Changes] [Generate PDF] [Compare Variants]
+```
+
+### **Final Output Options**
+```
+✅ Resume Generation Complete!
+
+📁 Generated Files:
+- resume_refined_professional.html (web viewing)
+- resume_pdf_optimized.html (PDF generation)
+- oscar_rivas_resume.pdf (application-ready)
+- comparison_board.html (all variants)
+
+📊 Quality Metrics:
+- ATS Score: 89% (excellent)
+- Visual Appeal: Professional & modern
+- Content Density: Optimized for 2-page PDF
+- Mobile Responsive: ✅ Works on all devices
+
+🎯 Ready to Use For:
+✅ Online job applications
+✅ ATS scanning systems  
+✅ Professional networking
+✅ Portfolio/personal website
+
+What would you like to do next?
+[Download All Files] [Email PDF] [Share Preview Link] [Generate Different Variant]
+```
+
+## 🎨 Design Variant Details
+
+### **Smart Recommendations**
+- **Finance/Law/Government** → Corporate Clean (maximum ATS compatibility)
+- **Tech/Startups** → Silicon Valley Minimal (modern, innovation-focused)
+- **Consulting/Healthcare** → Modern Professional (balanced professionalism)
+- **Mixed Industries** → Refined Professional (versatile across all sectors)
+
+### **Customization Intelligence**
+- Auto-detects industry from profile/content
+- Suggests color schemes based on role level
+- Optimizes typography for readability
+- Adapts spacing for content volume
+
+### **PDF Generation Features**
+- Chrome headless with optimized flags
+- No headers/footers for clean appearance
+- Clickable links preserved in PDF
+- Perfect 2-page layout optimization
+- High-quality typography rendering
+
+This interactive approach transforms resume formatting from a technical task into an engaging design experience that produces professionally optimized results!
 ```
 /resume-html-generator --variant refined
 

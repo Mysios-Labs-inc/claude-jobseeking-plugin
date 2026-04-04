@@ -1,53 +1,278 @@
 ---
 name: resume-optimizer
-description: Generate and optimize resumes using your stored profile data for ATS systems and specific job roles. Automatically creates personalized resumes from your profile or helps optimize existing resumes. Use when you need to create a targeted resume for a specific job, update your resume format, or optimize for ATS scanning.
+description: Interactive resume optimization with guided choices for review depth, target roles, and customization preferences. Features smart analysis, multiple choice options for focus areas, and personalized improvement recommendations based on your profile and goals.
 ---
 
-# Resume Optimizer - Profile-Driven Resume Generation
+# Resume Optimizer - Interactive Resume Enhancement
 
-Create ATS-optimized resumes automatically using your stored profile data, or optimize existing resumes for specific job roles. This skill integrates with your profile-setup data to generate personalized, targeted resumes in seconds.
+Transform your resume through guided, interactive workflows with smart choices, targeted analysis, and personalized optimization recommendations that adapt to your specific goals and career stage.
 
-## 🚀 Profile-Powered Features (Automatic)
+## 🎯 Interactive Resume Experience
 
-When you have a profile set up with `/profile-setup`, this skill automatically:
+### **Welcome & Intent Detection**
+When users run `/resume-optimizer`, start with:
 
-- **Instant Resume Generation**: Creates complete, ATS-optimized resumes using your profile data
-- **Role-Targeted Content**: Automatically tailors content for specific job postings you're applying to
-- **Smart Achievement Selection**: Highlights most relevant achievements for each target role
-- **Skills Optimization**: Prioritizes skills that match job requirements from your skills matrix
-- **Format Variety**: Generates modern, classic, or creative formats based on your preferences
-- **Keyword Integration**: Naturally incorporates job posting keywords into your experience descriptions
-- **Quantified Impact**: Emphasizes your quantified achievements that demonstrate value
-
-## 📋 Manual Features (Fallback)
-
-If you don't have a profile set up yet, I can still:
-- Review existing resume structure and formatting
-- Suggest content improvements for clarity and impact
-- Check for common resume mistakes and ATS compatibility
-- Provide general industry best practices and optimization tips
-
-## 🎯 How to Use
-
-### Automatic Profile-Driven Resume Generation (Recommended)
-
-**Step 1: Ensure Profile Setup**
 ```
-/jobseeking-plugin:profile-setup
-# Complete your one-time profile setup if not already done
+📋 Resume Optimization Assistant
+
+What would you like to do today?
+a) Create new resume from my profile
+b) Optimize existing resume for specific job
+c) General resume improvement review
+d) Compare multiple resume versions
+e) ATS compatibility check only
+
+Your choice determines the workflow and analysis depth!
 ```
 
-**Step 2: Generate Targeted Resume**
+### **Resume Analysis Options** (For existing resumes)
 ```
-/jobseeking-plugin:resume-optimizer
+🔍 Choose your optimization focus:
 
-I'll generate a personalized resume using your profile data!
+1. **Analysis depth?**
+   a) Quick scan (5 min) - ATS compatibility + major issues
+   b) Content audit (15 min) - Structure, achievements, keywords  
+   c) Deep analysis (30 min) - Full optimization with industry insights
+   d) Custom focus: ___________
 
-Options:
-- Generate resume for specific job posting (paste job URL or description)
-- Create general resume for your target roles
-- Choose format: modern, classic, or creative
-- Select target role if you have multiple career tracks
+2. **What's your target role level?**
+   a) Individual contributor/Senior IC
+   b) Team lead/Manager  
+   c) Director/VP
+   d) Executive/C-suite
+
+3. **Specific concerns?** (Select all that apply)
+   □ Too long/verbose
+   □ Missing quantified results
+   □ Weak technical keywords
+   □ Poor ATS compatibility
+   □ Unclear career progression
+   □ Industry transition positioning
+
+Based on your selections → Prioritized improvement plan
+```
+
+### **Job-Specific Optimization**
+```
+🎯 Job-Targeted Resume Optimization:
+
+1. **How would you like to provide the job details?**
+   a) Paste job posting URL
+   b) Upload job description file
+   c) Copy/paste job description text
+   d) Describe role manually
+
+2. **Application timeline?**
+   a) Applying today (quick optimization)
+   b) Applying this week (thorough optimization)
+   c) Future application (comprehensive research)
+
+3. **Customization level?**
+   a) Light keywords + format adjustment
+   b) Moderate content restructuring  
+   c) Heavy role-specific tailoring
+   d) Complete resume rewrite
+
+Let's optimize your resume for maximum impact!
+```
+
+### **Format & Style Selection**
+```
+🎨 Resume Format Preferences:
+
+1. **Industry style preference?**
+   a) Traditional/Conservative (finance, law, government)
+   b) Modern Professional (tech, consulting, corporate)
+   c) Creative/Design-forward (marketing, design, media)
+   d) Academic/Research format
+   e) Auto-detect from target role
+
+2. **Content emphasis?**
+   a) Technical skills and implementations
+   b) Business results and metrics
+   c) Leadership and team achievements  
+   d) Project management and delivery
+   e) Balanced approach
+
+3. **Page length preference?**
+   a) One page (early career/IC roles)
+   b) Two pages (standard professional)
+   c) Three pages (senior executive only)
+   d) Optimize for role level
+
+Your selections customize the resume template and content focus.
+```
+
+### **Skills & Keywords Optimization**
+```
+💻 Skills Section Enhancement:
+
+1. **Technical skill organization?**
+   a) Flat list (simple)
+   b) Categorized groups (languages, frameworks, tools)
+   c) Proficiency levels (expert, proficient, familiar)
+   d) Years of experience included
+
+2. **Keyword optimization approach?**
+   a) Natural integration in experience bullets
+   b) Dedicated skills section emphasis
+   c) Both experience and skills highlighting
+   d) ATS-focused keyword density
+
+3. **AI/ML skills prominence?** (Based on current market)
+   a) Highlight prominently (AI-focused roles)
+   b) Include but not emphasize
+   c) Minimal mention
+   d) Not applicable to my field
+
+Optimizing skills for maximum ATS and recruiter impact...
+```
+
+### **Achievement Optimization**
+```
+📈 Achievement Enhancement:
+
+1. **Quantification preference?**
+   a) Specific numbers (40% improvement, $2M revenue)
+   b) Relative metrics (doubled performance, reduced costs)
+   c) Scale indicators (enterprise-level, 1000+ users)
+   d) Mixed approach based on context
+
+2. **Missing achievement areas?** (Check all that need development)
+   □ Financial impact (cost savings, revenue)
+   □ Efficiency improvements (time, process)
+   □ Team/leadership outcomes
+   □ Technical innovations
+   □ Customer/user impact
+   □ Project delivery metrics
+
+3. **Achievement formula preference?**
+   a) X→Y→Z format (Accomplished X using Y resulting in Z)
+   b) STAR method (Situation, Task, Action, Result)
+   c) CAR method (Challenge, Action, Result)  
+   d) Simple metric-focused bullets
+
+Transforming your experience into compelling achievement stories...
+```
+
+## 🚀 Interactive Results & Recommendations
+
+### **Optimization Results Dashboard**
+```
+✅ Resume Optimization Complete!
+
+📊 Improvement Summary:
+- ATS Score: 73% → 89% (+16 points)
+- Content Strength: Good → Excellent
+- Keyword Match: 45% → 78% for target role
+- Quantified Results: 3 → 12 achievements
+
+🎯 Key Changes Made:
+- Added 9 quantified achievements with metrics
+- Optimized skills section for [Target Role]
+- Improved ATS compatibility (removed graphics, optimized format)
+- Enhanced keywords: [React, Product Management, AI/ML]
+- Strengthened professional summary
+
+📋 Priority Recommendations:
+1. 🔴 CRITICAL: Add P&L responsibility details (if applicable)
+2. 🟡 IMPORTANT: Include certification dates
+3. 🟢 NICE-TO-HAVE: Add portfolio/project links
+
+Would you like to:
+[Download Optimized Resume] [See Detailed Changes] [Compare Versions] [Optimize Further]
+```
+
+### **Interactive Review Process**
+```
+🔍 Let's review each section:
+
+**Professional Summary** ⭐⭐⭐⭐⭐
+✅ Strong value proposition
+✅ Keywords well-integrated  
+✅ Appropriate length (3 lines)
+
+**Experience Section** ⭐⭐⭐⭐⚪
+✅ Quantified achievements
+⚠️ Consider adding leadership metrics
+💡 Suggestion: Add team size managed
+
+**Skills Section** ⭐⭐⭐⚪⚪
+✅ Relevant to target role
+❌ Missing trending keywords: [AI/ML, Cloud Architecture]
+💡 Suggestion: Add proficiency levels
+
+Review each section? [Yes, step through] [Show all issues] [Skip to results]
+```
+
+### **A/B Testing Options**
+```
+🔬 Resume Variations Available:
+
+I've created 3 optimized versions for you:
+
+**Version A: Technical Focus**
+- Emphasizes technical skills and implementations
+- Detailed project descriptions
+- Best for: Senior IC, Tech Lead roles
+[Preview] [Download]
+
+**Version B: Business Impact**  
+- Highlights business results and metrics
+- Strategic accomplishment focus
+- Best for: Management, Director roles
+[Preview] [Download]
+
+**Version C: Balanced Approach**
+- Combines technical and business achievements
+- Versatile for multiple role types
+- Best for: Product Manager, Consulting roles
+[Preview] [Download]
+
+Which version resonates most with your target role?
+[Compare Side-by-Side] [Download All] [Customize Further]
+```
+
+## 🎯 Smart Features
+
+### **Profile Integration**
+- Auto-loads your profile data for instant optimization
+- Suggests improvements based on career stage and goals
+- Remembers your preferences for future optimizations
+
+### **Job Matching Intelligence**
+- Analyzes job postings for keyword requirements
+- Suggests role-specific achievement angles
+- Optimizes content hierarchy for specific industries
+
+### **Progress Tracking**
+```
+Optimization Progress:
+████████████░░░ 80% Complete
+
+✓ Content Analysis (2 min)
+✓ Keyword Optimization (3 min)
+✓ Achievement Enhancement (4 min)
+▶ Format & ATS Check (1 min remaining)
+□ Final Review & Download
+
+[Save Progress] [Skip to Results] [Continue]
+```
+
+### **Learning Mode**
+```
+💡 Want to learn while optimizing?
+
+I can explain:
+□ Why specific changes improve ATS scores
+□ How recruiters scan resumes (6-second rule)
+□ Industry-specific keyword strategies
+□ Achievement quantification techniques
+
+[Enable Learning Mode] [Just Optimize] [Quick Tips Only]
+```
+
+This interactive approach transforms resume optimization from a passive review into an engaging, educational experience that produces measurably better results!
 ```
 
 **Step 3: Instant Results**

@@ -1,12 +1,31 @@
 {
   "name": "career-intelligence-plugin",
-  "version": "1.3.3",
+  "version": "1.4.0",
   "description": "Career intelligence and resume optimization plugin for Claude Code",
   "scripts": {
     "test": "jest",
     "lint": "eslint .",
     "validate": "claude plugin validate .",
-    "build": "npm run lint && npm run test"
+    "build": "npm run lint && npm run test",
+    "skills": "bun scripts/skill-runner.js",
+    "pdf": "bun skills/resume-html-generator/scripts/generate-pdf-bun.js",
+    "analyze": "bun skills/resume-optimizer/scripts/resume-analyzer.js",
+    "profile": "bun skills/profile-setup/scripts/profile-processor.js",
+    "optimize": "bun skills/ai-content-optimizer/scripts/claude-optimizer.js",
+    "interactive": "bun skills/ai-content-optimizer/scripts/interactive-optimizer.js",
+    "ai-engine": "bun skills/ai-content-optimizer/scripts/ai-content-engine.js",
+    "job-analyzer": "bun skills/ai-content-optimizer/scripts/job-analyzer.js",
+    "content-enhance": "bun skills/ai-content-optimizer/scripts/content-enhancer.js",
+    "salary-analyzer": "bun skills/market-intelligence/scripts/salary-analyzer.js",
+    "skills-gap": "bun skills/market-intelligence/scripts/skills-gap-analyzer.js",
+    "company-intel": "bun skills/market-intelligence/scripts/company-intelligence.js",
+    "market-intelligence": "bun skills/market-intelligence/scripts/market-intelligence-engine.js",
+    "ats-test": "bun skills/ats-validation/scripts/ats-compatibility-tester.js",
+    "format-validate": "bun skills/ats-validation/scripts/format-validator.js",
+    "track-apps": "bun skills/ats-validation/scripts/application-tracker.js",
+    "ats-validation": "bun skills/ats-validation/scripts/ats-validation-engine.js",
+    "network-analyze": "bun skills/network-intelligence/scripts/network-analyzer.js",
+    "outreach": "bun skills/network-intelligence/scripts/outreach-engine.js"
   },
   "keywords": [
     "claude",
@@ -40,6 +59,11 @@
     "typescript": "^5.0.0"
   },
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=18.0.0",
+    "bun": ">=1.0.0"
+  },
+  "runtime": {
+    "node": "Primary runtime for Claude Code integration",
+    "bun": "Optimized scripts for PDF generation and interactive tools"
   }
 }

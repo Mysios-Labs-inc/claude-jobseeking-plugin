@@ -7,11 +7,45 @@ A Claude Code plugin for career management, resume optimization, and job search 
 ## Features
 
 ### Core Functionality
-- **Profile Setup** - Set up your professional profile once
-- **Resume Generation** - Create targeted resumes for different roles
-- **Job Search Tools** - Organize and track job applications
-- **Interview Prep** - Prepare for interviews with company research
+- **Interactive Profile Setup** - Guided workflows with smart choices and progress tracking
+- **Resume Optimization** - AI-powered analysis with A/B testing and customization options
+- **Job Search Tools** - Organize and track job applications with automation
+- **Interactive Interview Prep** - Timeline-based preparation with mock interviews
 - **Local Storage** - All data stored locally on your machine
+
+### Phase 4: Network Intelligence 🌐 NEW
+- **Network Analysis** - AI-powered relationship mapping and referral pathway identification
+- **Outreach Automation** - Smart templates with personalization scoring and timing optimization
+- **Referral Intelligence** - Target company pathway mapping with optimal approach sequences
+- **Personal Branding** - LinkedIn optimization and thought leadership content generation
+- **Success Tracking** - Outreach performance analytics with response probability prediction
+
+### Phase 3: ATS Validation 🤖
+- **Multi-System ATS Testing** - Compatibility across 15+ major platforms (Workday, Greenhouse, Lever, Taleo, Ashby)
+- **Format Validation** - PDF, Word, HTML parsing simulation and optimization
+- **Application Success Tracking** - Response rate analytics with system correlation
+- **Success Prediction** - AI-powered outcome modeling with confidence scoring
+- **Real-time Optimization** - Instant compatibility testing and improvement recommendations
+
+### Phase 2: Market Intelligence 📊
+- **Salary Benchmarking** - Real-time compensation analysis with multi-source data
+- **Skills Gap Analysis** - Market demand assessment with learning ROI calculations
+- **Company Intelligence** - Culture analysis, hiring patterns, and interview prep
+- **Competitive Positioning** - Strategic market differentiation and unique value proposition
+- **Negotiation Intelligence** - Data-driven strategy with market context and timing
+
+### Phase 1: AI Content Intelligence 🤖
+- **Real-time Content Optimization** - Claude AI-powered enhancement and scoring
+- **Job Description Analysis** - Requirement extraction and keyword integration
+- **Achievement Amplification** - X→Y→Z impact formula with quantified results
+- **Interactive Workflows** - Multiple choice options with smart branching logic
+
+### Bun Scripts & CLI Tools 🚀
+- **High-Performance Scripts** - 2-3x faster execution with Bun runtime
+- **AI Content Optimization** - Claude API integration for sophisticated enhancement
+- **Market Intelligence** - Comprehensive salary, skills, and company analysis
+- **PDF Generation** - Optimized Chrome headless for perfect 2-page layouts
+- **Interactive Tools** - Guided workflows with real-time feedback and scoring
 
 ### Workspace Organization
 - **Resume Management** - Organize resume versions and templates
@@ -28,6 +62,52 @@ Basic commands to get started with the career intelligence plugin:
 /career-intelligence:profile-setup
 ```
 Set up your professional profile and workspace
+
+## 🚀 Bun Scripts (High Performance CLI)
+
+For power users and automation, use our optimized Bun scripts:
+
+```bash
+# Interactive skill selection
+npm run skills
+
+# AI content optimization
+npm run interactive              # Guided content enhancement
+npm run optimize resume.md      # Direct Claude API optimization
+npm run ai-engine analyze       # Complete AI pipeline
+
+# Market intelligence analysis  
+npm run market-intelligence analyze profile.json role.json
+npm run salary-analyzer "Product Manager" 5 "San Francisco"
+npm run skills-gap analyze profile.json
+npm run company-intel analyze "OpenAI"
+
+# Network intelligence and outreach
+npm run network-analyze demo                  # Network analysis demo
+npm run network-analyze analyze connections.csv
+npm run outreach linkedin "AI product management" post
+npm run outreach generate contact.json referral_request
+
+# ATS validation and optimization
+npm run ats-validation validate resume.pdf job-description.txt
+npm run ats-test test resume.pdf
+npm run format-validate validate resume.docx  
+npm run track-apps summary
+
+# Resume generation and analysis
+npm run analyze resume.md --interactive
+npm run pdf resume.html final-resume.pdf
+npm run profile resume.md profile.json
+```
+
+**📖 Full Documentation**: 
+- [AI Content Intelligence](docs/AI_CONTENT_INTELLIGENCE.md) - Phase 1 capabilities
+- [Market Intelligence](docs/MARKET_INTELLIGENCE.md) - Phase 2 capabilities  
+- [ATS Validation](docs/ATS_VALIDATION.md) - Phase 3 capabilities
+- [Network Intelligence](skills/network-intelligence/SKILL.md) - Phase 4 capabilities
+- [Bun Scripts Guide](docs/BUN_SCRIPTS.md) - Performance optimizations
+
+**Performance**: 2-3x faster than Node.js with parallel processing and real-time analysis.
 
 ### 2. Generate Resumes  
 ```bash

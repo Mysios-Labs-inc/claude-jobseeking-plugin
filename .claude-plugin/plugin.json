@@ -1,6 +1,6 @@
 {
   "name": "career-intelligence-plugin",
-  "version": "1.3.3",
+  "version": "1.4.0",
   "description": "Career intelligence plugin for Claude Code with resume optimization and job search tools.",
   "author": {
     "name": "Mysios Labs Inc",

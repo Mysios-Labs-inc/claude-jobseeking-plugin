@@ -1,0 +1,40 @@
+/* URL Formatting Improvements */
+.project-url {
+    font-size: 7pt;
+    color: #0066cc;
+    display: block;
+    margin-top: 1pt;
+    text-decoration: none;
+}
+
+.project-url:hover {
+    text-decoration: underline;
+}
+
+.publication-url {
+    font-size: 7pt;
+    color: #0066cc;
+    display: block;
+    margin-top: 1pt;
+    text-decoration: none;
+}
+
+.publication-url:hover {
+    text-decoration: underline;
+}
+
+.project-description {
+    font-size: 7pt;
+    color: #333;
+    display: block;
+    margin-top: 1pt;
+}
+
+/* Ensure proper line breaks for URLs */
+.project-item {
+    margin-bottom: 4pt;
+}
+
+.publication-item {
+    margin-bottom: 4pt;
+}
